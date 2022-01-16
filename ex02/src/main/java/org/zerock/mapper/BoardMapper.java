@@ -6,7 +6,7 @@ import org.zerock.domain.BoardVO;
 
 public interface BoardMapper {
 	
-//	@Select("select * from tbl_board where bno > 0") -> BorderMapper.xml 로 처리완료
+//	@Select("select * from tbl_board where bno > 0") -> BorderMapper.xml 로 처리완료 (아래 메소드들도 동일)
 	public List<BoardVO> getList();
 	
 	public void insert(BoardVO board);
