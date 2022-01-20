@@ -20,7 +20,7 @@ import lombok.extern.log4j.Log4j;
 //Test for Controller
 @WebAppConfiguration
 
-@ContextConfiguration({"file:src/main/webapp/WEB-INF/spring/root-context.xml",
+@ContextConfiguration({ "file:src/main/webapp/WEB-INF/spring/root-context.xml",
 		"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" })
 @Log4j
 public class BoardControllerTests {
@@ -41,24 +41,26 @@ public class BoardControllerTests {
 		log.info(
 				mockMvc.perform(MockMvcRequestBuilders.get("/board/list")).andReturn().getModelAndView().getModelMap());
 	}
-	
-	
+
 	@Test
 	public void testRegister() throws Exception {
-		
-		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/register").param("title",  "테스트 새 글 제목").param("content",  "테스트 새 글 내용").param("writer", "user00")).andReturn().getModelAndView().getViewName();
-		
+
+		String resultPage = mockMvc
+				.perform(MockMvcRequestBuilders.post("/board/register").param("title", "테스트 새 글 제목")
+						.param("content", "테스트 새 글 내용").param("writer", "user00"))
+				.andReturn().getModelAndView().getViewName();
+
 		log.info(resultPage);
-		
+
 	}
-	
+
 	@Test
 	public void testGet() throws Exception {
-		
-		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/get").param("bno", "35")).andReturn().getModelAndView().getModelMap());
+
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/get").param("bno", "35")).andReturn()
+				.getModelAndView().getModelMap());
 	}
-	
-	
+
 //	@Test
 //	public void testModify() throws Exception {
 //		
@@ -66,8 +68,7 @@ public class BoardControllerTests {
 //		
 //		log.info(resultPage);
 //	}
-	
-	
+
 //	@Test
 //	public void testRemove() throws Exception {
 //		//삭제 전 데이터베이스 게시물 번호 확인
@@ -76,7 +77,7 @@ public class BoardControllerTests {
 //		log.info(resultPage);
 //		
 //	}
-	
+
 	@Test
 	public void testListPaging() throws Exception {
 		
@@ -86,10 +87,4 @@ public class BoardControllerTests {
 	}
 	
 	
-	
-	
-	
-	
-	
-
 }

@@ -26,7 +26,7 @@
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>#번호</th>
+							<th>번호</th>
 							<th>제목</th>
 							<th>작성자</th>
 							<th>작성일</th>
@@ -40,7 +40,8 @@
 							<td><c:out value="${board.bno}" /></td>
 
 							<td><a href='/board/get?bno=<c:out value="${board.bno }"/>'>
-							<c:out value="${board.title }" /></a></td>
+									<c:out value="${board.title }" />
+							</a></td>
 
 
 							<td><c:out value="${board.writer}" /></td>
@@ -54,6 +55,27 @@
 					</c:forEach>
 
 				</table>
+
+				<div class='pull-right'>
+					<ul class="pagination">
+
+						<c:if test="${pageMaker.prev}">
+							<li class="paginate_button previous"><a href="#">Previous</a></li>
+						</c:if>
+
+						<c:forEach var="num" begin="${pageMaker.startPage}"
+							end="${pageMaker.endPage}">
+							<li class="paginate_button"><a href="#">${num}</a></li>
+						</c:forEach>
+
+						<c:if test="${pageMaker.next }">
+							<li class="paginate_button next"><a href="#">Next</a></li>
+						</c:if>
+					</ul>
+
+				</div>
+				<!-- end Pagination -->
+
 
 				<!-- Modal -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -80,7 +102,6 @@
 				<!-- /.modal -->
 
 
-
 			</div>
 			<!-- /.panel-body -->
 		</div>
@@ -95,17 +116,18 @@
 <%@include file="../includes/footer.jsp"%>
 
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document).ready(
+			function() {
 
 				var result = '<c:out value="${result}"/>';
 
 				checkModal(result);
-				
-				history.replaceState({},null,null);
+
+				history.replaceState({}, null, null);
 
 				function checkModal(result) {
 
-					if (result === ''|| history.state ) {
+					if (result === '' || history.state) {
 						return;
 					}
 
