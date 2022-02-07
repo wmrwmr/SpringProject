@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace에는 interface의 전체 이름을 기입 -->
+<mapper namespace="com.bitcamp.op.guestbook.dao.GuestBookReplyDao">
+
+	<insert id="insertReply"
+			parameterType="com.bitcamp.op.guestbook.domain.ReplyRegRequest"
+			useGeneratedKeys="true"
+			keyProperty="idx"
+	>
+	
+	INSERT INTO reply (content, memberidx, guestbookidx) 
+	VALUES (#{message}, #{memberIdx}, #{guestbookIdx})
+	
+	</insert>
+	
+	<delete id="deleteByIdx">
+		delete from reply where idx=#{idx}
+	</delete>
+	
+	
+	
+	
+	
+	
+</mapper>

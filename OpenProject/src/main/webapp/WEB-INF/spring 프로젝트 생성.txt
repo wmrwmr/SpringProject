@@ -1,0 +1,16 @@
+----------------------------------------
+프로젝트 세팅
+1. JDK 버전 변경
+2. pom 설정 파일에서 java 버전 변경
+3. java compiler 변경
+4. project facet 변경
+5. Spring Framework 버전 변경 : 4.3.10
+-----------------------------------------
+MVC 세팅
+1. 파일업로드 : pom, multipartResolver 
+2. 정적리소스 설정
+3. views
+-----------------------------------------
+DB 세팅
+1. mysql connector lib
+

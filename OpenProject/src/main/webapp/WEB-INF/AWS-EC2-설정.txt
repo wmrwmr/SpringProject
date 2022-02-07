@@ -1,0 +1,32 @@
+[ec2-user@ip-172-31-11-76 ~]$ sudo su -
+Last login: Mon Jan 24 00:55:27 UTC 2022 on pts/0
+
+[root@ip-172-31-11-76 ~]#
+[root@ip-172-31-11-76 ~]# yum list java-1.8.0*
+..........
+java-1.8.0-openjdk.x86_64  <- 설치
+
+[root@ip-172-31-11-76 ~]# yum install java-1.8.0-openjdk.x86_64
+
+[root@ip-172-31-11-76 ~]# yum list tomcat*
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+..........
+tomcat.noarch                          7.0.76-10.amzn2.0.2          @amzn2-core
+tomcat-admin-webapps.noarch            7.0.76-10.amzn2.0.2          @amzn2-core
+tomcat-webapps.noarch  
+
+[root@ip-172-31-11-76 ~]# yum install tomcat.noarch
+[root@ip-172-31-11-76 ~]# yum install tomcat-admin-webapps.noarch
+[root@ip-172-31-11-76 ~]# yum install tomcat-webapps.noarch
+
+
+-------------------------------------------
+tomcat 폴더의 그룹과 권한 변경 root->tomcat
+[root@ip-172-31-11-76 tomcat]# chgrp -R tomcat /usr/share/tomcat
+[root@ip-172-31-11-76 tomcat]# chown -R tomcat webapps/ work/ temp/ logs/
+[root@ip-172-31-11-76 tomcat]# find conf webapps -type d -exec chmod 755 {} +
+[root@ip-172-31-11-76 tomcat]# find conf webapps -type f -exec chmod 644 {} +
+[root@ip-172-31-11-76 tomcat]# find logs temp work -type d -exec chmod 750 {} +
+[root@ip-172-31-11-76 tomcat]# find logs temp work -type f -exec chmod 640 {} +
+[root@ip-172-31-11-76 tomcat]#
+
