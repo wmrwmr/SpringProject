@@ -178,16 +178,11 @@
 			<scope>provided</scope>
 		</dependency>
 
-
-		<!-- 데이터베이스 관련 설정 -->
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.27</version>
 		</dependency>
-
-
 
 
 	</dependencies>

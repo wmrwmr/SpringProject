@@ -39,45 +39,13 @@
 		</beans:property>
 	</beans:bean>
 
-	<beans:bean id="authCheckInterceptor"
-		class="com.bitcamp.op.member.interceptor.AuthCheckInterceptor" />
-
-	<!-- 로그인 여부 확인을 위한 인터셉터 등록 -->
-	<!-- <interceptors>
-		<interceptor>
-			<mapping path="/member/my/**" />
-			<mapping path="/member/manager/**" />
-			<mapping path="/guestbook/**"/>
-			<beans:ref bean="authCheckInterceptor" />
-		</interceptor>
-	</interceptors> -->
 
 
-	<!-- JavaMailSender 설정 -->
-	<beans:bean id="mailSender"
-		class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<beans:property name="host" value="smtp.gmail.com" />
-		<beans:property name="port" value="587" /><!-- 465 or 25 -->
-		<beans:property name="username" value="bitcamp20210906@gmail.com" />
-		<beans:property name="password" value="[계정비밀번호:임시비밀번호로 만들어서 사용하세요]" />
-		<beans:property name="defaultEncoding" value="utf-8" />
-		<beans:property name="javaMailProperties">
-			<beans:props>
-				<beans:prop key="mail.transport.protocol">smtp</beans:prop>
-				<beans:prop key="mail.smtp.auth">true</beans:prop>
-				<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
-				<beans:prop key="mail.debug">true</beans:prop>
-				
-				<beans:prop key="mail.smtp.ssl.trust">smtp.gmail.com</beans:prop>
-				<beans:prop key="mail.smtp.ssl.protocols">TLSv1.2</beans:prop>
-			</beans:props>
-		</beans:property>
-	</beans:bean>
 
 
 
 	<context:component-scan
-		base-package="com.bitcamp.op" />
+		base-package="com.bitwin.bangbang" />
 
 
 

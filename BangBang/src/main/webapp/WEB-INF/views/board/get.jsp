@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Board Read</h1>
+		<h1 class="page-header">공지사항</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -17,35 +17,38 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">Board Read Page</div>
+			<div class="panel-heading">
+				&nbsp;
+			 </div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 
 
 				<div class="form-group">
-					<label>nidx</label> <input class="form-control" name='nidx'
-						value='<c:out value="${board.nidx }"/>' readonly='readonly'>
+					<label>공지사항 번호</label> <input class="form-control" name='nidx'
+						value='<c:out value="${board.nidx}"/>' readonly='readonly'>
 
 				</div>
 
 				<div class="form-group">
-					<label>Title</label> <input class="form-control" name='title'
+					<label>제목</label> <input class="form-control" name='title'
 						value='<c:out value="${board.title }"/>' readonly='readonly'>
 				</div>
 
 				<div class="form-group">
-					<label>Text area</label>
+					<label>내용</label>
 					<textarea class="form-control" rows="3" name='content'
 						readonly="readonly"> <c:out value="${board.content }" /> </textarea>
 				</div>
 
 
-				<button data-oper='modify' class="btn btn-default">Modify</button>
-				<button data-oper='list' class="btn btn-info">List</button>
 
-				<form id='operForm' action="/board/modify" method="get">
+				<button data-oper='modify' class="btn btn-default">수정/삭제</button>
+				<button data-oper='list' class="btn btn-info">목록</button>
+
+				<form id='operForm' action="/bangbang/board/modify" method="get">
 					<input type='hidden' id='nidx' name='nidx'
-						value='<c:out value="${board.nidx }"/>'>
+						value='<c:out value="${board.nidx}"/>'>
 				</form>
 
 
@@ -66,14 +69,14 @@ $(document).ready(function() {
 		
 		$("button[data-oper='modify']").on("click", function(e) {
 			
-			operForm.attr("action", "/board/modify").submit();
+			operForm.attr("action", "/bangbang/board/modify").submit();
 			
 		});
 	
 		$("button[data-oper='list']").on("click", function(e) {
 			
 			operForm.find("#nidx").remove();
-			operForm.attr("action", "/board/list")
+			operForm.attr("action", "/bangbang/board/list")
 			operForm.submit();
 
 		});		

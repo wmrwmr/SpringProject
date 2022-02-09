@@ -402,6 +402,14 @@ table.dataTable thead .sorting:after {
 .timeline-body > p + p {
   margin-top: 5px;
 }
+
+.navbar-brandaleo {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
 @media (max-width: 767px) {
   ul.timeline:before {
     left: 40px;
