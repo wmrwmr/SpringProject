@@ -52,8 +52,6 @@
 						value='<c:out value="${cri.pageNum}"/>'> 
 					<input type='hidden' name='amount' 
 						value='<c:out value="${cri.amount}"/>'>
-					<input type='hidden' name='offset'
-						value='<c:out value="${cri.offset}"/>'>
 				</form>
 
 

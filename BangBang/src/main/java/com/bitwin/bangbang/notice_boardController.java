@@ -75,7 +75,6 @@ public class notice_boardController {
 		
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
-		rttr.addAttribute("offset", cri.getOffset());
 		
 		return "redirect:/board/list";
 	}
@@ -94,7 +93,6 @@ public class notice_boardController {
 		
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
-		rttr.addAttribute("offset", cri.getOffset());
 		
 		return "redirect:/board/list";
 	}

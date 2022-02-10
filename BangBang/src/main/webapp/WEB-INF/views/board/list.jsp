@@ -25,45 +25,65 @@
 			<div class="panel-body">
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
-						<tr>
+						<!-- 						<tr>
 							<th>번호</th>
-							<th style="padding-right: 180px">제목</th>
-							<th>작성일</th>
+							<th style="padding-right: 180px"></th>
+							<th></th>
 							<th>수정일</th>
-						</tr>
+						</tr> -->
 					</thead>
 
 					<c:forEach items="${list}" var="board">
 
 						<tr>
-							<td><c:out value="${board.nidx}" /></td>
+							<%-- <td><c:out value="${board.nidx}" /></td> --%>
 
-							<td><a class='move' href='<c:out value="${board.nidx}"/>'>
-									<c:out value="${board.title}" />
-							</a></td>
+							<td style="padding: 15px;"><a class='move'
+								href='<c:out value="${board.nidx}"/>'
+								style="padding-right: 1200px;"> <c:out
+										value="${board.title}" /></a></td>
+
+							<td style="padding: 15px; color: rgb(0, 0, 0, 0.5);"><i
+								class="fa-solid fa-clock" style="padding-right: 8px;"></i>
+							<fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
 
 
-							<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${board.regdate}" /></td>
-							<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${board.updatedate}" /></td>
+
+							<%-- 	<td><fmt:formatDate pattern="yyyy-MM-dd"
+									value="${board.updatedate}" /></td> --%>
 
 						</tr>
 
 					</c:forEach>
 
 				</table>
+				
+				
+				
 
-				<div class="sidebar-search">
-					<div class="input-group custom-search-form" style="margin-right: 1250px;">
-						<input type="text" class="form-control" placeholder="검색">
-						<span class="input-group-btn">
-							<button class="btn btn-default" type="button">
-								<i class="fa fa-search"></i>
-							</button>
-						</span>
-					</div> 
+				<div class='row'>
+					<div class="col-lg-12">
+
+						<form id='searchForm' action="/bangbang/board/list" method="get">
+							<select name='type'>
+
+								<option value="">--</option>
+								<option value="T">제목</option>
+								<option value="C">내용</option>
+								<option value="TC">제목+내용</option>
+
+
+							</select>
+							<input type='text' name='keyword' />
+							<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}' >
+							<input type='hidden' name='amount' value='${pageMaker.cri.amount}' >
+							<button class='btn btn-default'>검색</button>
+
+
+						</form>
+					</div>
 				</div>
+
 
 
 
@@ -94,8 +114,7 @@
 				<form id='actionForm' action="/bangbang/board/list" method='get'>
 					<input type='hidden' name='pageNum'
 						value='${pageMaker.cri.pageNum}'> <input type='hidden'
-						name='amount' value='${pageMaker.cri.amount}'> <input
-						type='hidden' name='offset' value='${pageMaker.cri.offset}'>
+						name='amount' value='${pageMaker.cri.amount}'> 
 
 				</form>
 
@@ -176,12 +195,7 @@
 											actionForm.find(
 													"input[name='pageNum']")
 													.val($(this).attr("href"));
-											actionForm
-													.find(
-															"input[name='offset']")
-													.val(
-															($(this).attr(
-																	"href") - 1) * 10);
+											
 											actionForm.submit();
 										});
 
