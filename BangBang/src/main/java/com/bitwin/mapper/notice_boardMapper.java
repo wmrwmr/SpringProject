@@ -21,4 +21,6 @@ public interface notice_boardMapper {
 	public int update(notice_boardVO board);
 	
 	public List<notice_boardVO> getListWithPaging(Criteria cri);
+	
+	public int getTotalCount(Criteria cri);
 }

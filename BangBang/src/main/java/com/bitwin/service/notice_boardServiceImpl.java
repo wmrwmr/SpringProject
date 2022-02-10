@@ -60,6 +60,14 @@ public class notice_boardServiceImpl implements notice_boardService {
 		return mapper.delete(nidx)==1;
 	}
 	
+	@Override
+	public int getTotal(Criteria cri) {
+		
+		log.info("get total count");
+		
+		return mapper.getTotalCount(cri);
+	}
+	
 	
 	
 	

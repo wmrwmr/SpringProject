@@ -3,6 +3,7 @@ package com.bitwin.bangbang;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,7 +31,13 @@ public class notice_boardController {
 		log.info("list: " + cri);
 		
 		model.addAttribute("list", service.getList(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 200));
+//		model.addAttribute("pageMaker", new PageDTO(cri, 200));
+		
+		int total = service.getTotal(cri);
+		
+		log.info("total: " + total);
+		
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 		
 	}
 	
@@ -49,7 +56,7 @@ public class notice_boardController {
 	}
 	
 	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("nidx") int nidx, Model model) {
+	public void get(@RequestParam("nidx") int nidx, @ModelAttribute("cri") Criteria cri, Model model) {
 		
 		log.info("/get or modify");
 		model.addAttribute("board", service.get(nidx));
@@ -57,7 +64,7 @@ public class notice_boardController {
 	}
 	
 	@PostMapping("/modify")
-	public String modify(notice_boardVO board, RedirectAttributes rttr) {
+	public String modify(notice_boardVO board, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
 		
 		log.info("modify: " + board);
 		
@@ -65,12 +72,17 @@ public class notice_boardController {
 			rttr.addFlashAttribute("result", "success");
 			
 		}
+		
+		rttr.addAttribute("pageNum", cri.getPageNum());
+		rttr.addAttribute("amount", cri.getAmount());
+		rttr.addAttribute("offset", cri.getOffset());
+		
 		return "redirect:/board/list";
 	}
 	
 	
 	@PostMapping("/remove")
-	public String remove(@RequestParam("nidx") int nidx, RedirectAttributes rttr) {
+	public String remove(@RequestParam("nidx") int nidx, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
 		
 		log.info("remove..." + nidx);
 		
@@ -80,6 +92,10 @@ public class notice_boardController {
 			
 		}
 		
+		rttr.addAttribute("pageNum", cri.getPageNum());
+		rttr.addAttribute("amount", cri.getAmount());
+		rttr.addAttribute("offset", cri.getOffset());
+		
 		return "redirect:/board/list";
 	}
 	
@@ -87,6 +103,8 @@ public class notice_boardController {
 	public void register() {
 		
 	}
+	
+	
 	
 	
 	

@@ -18,5 +18,7 @@ public interface notice_boardService {
 	
 	public List<notice_boardVO> getList(Criteria cri);
 	
+	public int getTotal(Criteria cri);
+	
 	
 }

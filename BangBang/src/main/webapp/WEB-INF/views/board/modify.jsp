@@ -24,6 +24,11 @@
 			<div class="panel-body">
 
 				<form role="form" action="/bangbang/board/modify" method="post">
+				
+				<input type='hidden' name='pageNum' value='<c:out value="${cri.pageNum }"/>'>
+				<input type='hidden' name='amount' value='<c:out value="${cri.amount }"/>'>
+				<input type='hidden' name='offset' value='<c:out value="${cri.offset }"/>'>
+				
 
 
 					<div class="form-group">
@@ -81,7 +86,7 @@
 			e.preventDefault();
 
 			var operation = $(this).data("oper");
-
+			
 			console.log(operation);
 
 			if (operation === 'remove') {
@@ -89,7 +94,15 @@
 			} else if (operation === 'list') {
 				//move to list
 				formObj.attr("action", "/bangbang/board/list").attr("method", "get");
+				var pageNumTag = $("input[name='pageNum']").clone();
+				var amountTag = $("input[name='amount']").clone();
+				var offsetTag = $("input[name='offset']").clone();
+				
 				formObj.empty();
+				
+				formObj.append(pageNumTag);
+				formObj.append(amountTag);
+				formObj.append(offsetTag);
 			}
 			formObj.submit();
 

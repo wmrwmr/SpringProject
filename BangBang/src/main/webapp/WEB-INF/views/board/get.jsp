@@ -17,9 +17,7 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				&nbsp;
-			 </div>
+			<div class="panel-heading">&nbsp;</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 
@@ -48,7 +46,14 @@
 
 				<form id='operForm' action="/bangbang/board/modify" method="get">
 					<input type='hidden' id='nidx' name='nidx'
-						value='<c:out value="${board.nidx}"/>'>
+						value='<c:out value="${board.nidx}"/>'> 
+					<input
+						type='hidden' name='pageNum' 
+						value='<c:out value="${cri.pageNum}"/>'> 
+					<input type='hidden' name='amount' 
+						value='<c:out value="${cri.amount}"/>'>
+					<input type='hidden' name='offset'
+						value='<c:out value="${cri.offset}"/>'>
 				</form>
 
 
@@ -63,24 +68,23 @@
 <%@include file="../includes/footer.jsp"%>
 
 <script type="text/javascript">
-$(document).ready(function() {
-		
+	$(document).ready(function() {
+
 		var operForm = $("#operForm");
-		
+
 		$("button[data-oper='modify']").on("click", function(e) {
-			
+
 			operForm.attr("action", "/bangbang/board/modify").submit();
-			
+
 		});
-	
+
 		$("button[data-oper='list']").on("click", function(e) {
-			
+
 			operForm.find("#nidx").remove();
 			operForm.attr("action", "/bangbang/board/list")
 			operForm.submit();
 
-		});		
-		
+		});
+
 	});
-	
-	</script>
+</script>
