@@ -38,8 +38,7 @@
 						<tr>
 							<%-- <td><c:out value="${board.nidx}" /></td> --%>
 
-							<td style="padding: 15px;"><a class='move'
-								href='<c:out value="${board.nidx}"/>'
+							<td style="padding: 15px;"><a class='move' href='<c:out value="${board.nidx}"/>'
 								style="padding-right: 500px; padding-left: 20px;" > <c:out value="${board.title}" /></a></td>
 
 
@@ -207,10 +206,7 @@
 									actionForm.submit();
 								});
 
-						$(".move")
-								.on(
-										"click",
-										function(e) {
+						$(".move").on("click", function(e) {
 
 											e.preventDefault();
 											actionForm

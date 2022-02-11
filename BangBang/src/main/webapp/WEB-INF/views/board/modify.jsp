@@ -27,14 +27,15 @@
 				
 				<input type='hidden' name='pageNum' value='<c:out value="${cri.pageNum }"/>'>
 				<input type='hidden' name='amount' value='<c:out value="${cri.amount }"/>'>
+				<input type='hidden' name='start' value='<c:out value="${cri.start }"/>'>
 				
 
 
-					<div class="form-group">
-						<label>공지사항 번호</label> <input class="form-control" name='nidx'
+ 					<div class="form-group" >
+						 <input type='hidden' class="form-control" name='nidx'
 							value='<c:out value="${board.nidx}"/>' readonly='readonly'>
 
-					</div>
+					</div> 
 
 					<div class="form-group">
 						<label>제목</label> <input class="form-control" name='title'
@@ -43,7 +44,7 @@
 
 					<div class="form-group">
 						<label>내용</label>
-						<textarea class="form-control" rows="3" name='content'> <c:out
+						<textarea class="form-control" rows="15" name='content'> <c:out
 								value="${board.content }" /> </textarea>
 					</div>
 
@@ -95,11 +96,13 @@
 				formObj.attr("action", "/bangbang/board/list").attr("method", "get");
 				var pageNumTag = $("input[name='pageNum']").clone();
 				var amountTag = $("input[name='amount']").clone();
+				var startTag = $("input[name='start']").clone();
 				
 				formObj.empty();
 				
 				formObj.append(pageNumTag);
 				formObj.append(amountTag);
+				formObj.append(startTag);
 			}
 			formObj.submit();
 

@@ -22,11 +22,11 @@
 			<div class="panel-body">
 
 
-				<div class="form-group">
+<%-- 				<div class="form-group">
 					<label>공지사항 번호</label> <input class="form-control" name='nidx'
 						value='<c:out value="${board.nidx}"/>' readonly='readonly'>
 
-				</div>
+				</div> --%>
 
 				<div class="form-group">
 					<label>제목</label> <input class="form-control" name='title'
@@ -35,7 +35,7 @@
 
 				<div class="form-group">
 					<label>내용</label>
-					<textarea class="form-control" rows="3" name='content'
+					<textarea class="form-control" rows="15" name='content'
 						readonly="readonly"> <c:out value="${board.content }" /> </textarea>
 				</div>
 
@@ -47,11 +47,13 @@
 				<form id='operForm' action="/bangbang/board/modify" method="get">
 					<input type='hidden' id='nidx' name='nidx'
 						value='<c:out value="${board.nidx}"/>'> 
-					<input
-						type='hidden' name='pageNum' 
+					<input type='hidden' name='pageNum' 
 						value='<c:out value="${cri.pageNum}"/>'> 
 					<input type='hidden' name='amount' 
 						value='<c:out value="${cri.amount}"/>'>
+					<input type='hidden' name='start' 
+						value='<c:out value="${cri.start}"/>'>
+
 				</form>
 
 
