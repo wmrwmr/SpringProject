@@ -40,12 +40,19 @@
 
 							<td style="padding: 15px;"><a class='move'
 								href='<c:out value="${board.nidx}"/>'
-								style="padding-right: 1200px;"> <c:out
-										value="${board.title}" /></a></td>
+								style="padding-right: 500px; padding-left: 20px;" > <c:out value="${board.title}" /></a></td>
+
+
 
 							<td style="padding: 15px; color: rgb(0, 0, 0, 0.5);"><i
-								class="fa-solid fa-clock" style="padding-right: 8px;"></i>
-							<fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
+								class="fa-solid fa-clock" style="padding-right: 8px; padding-left: 10px;"></i> <fmt:formatDate
+									pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
+
+
+
+
+
+
 
 
 
@@ -57,11 +64,11 @@
 					</c:forEach>
 
 				</table>
-				
-				
-				
 
-				<div class='row'>
+
+
+
+				<div class='pull-left' style="padding-top: 18px;" >
 					<div class="col-lg-12">
 
 						<form id='searchForm' action="/bangbang/board/list" method="get">
@@ -73,11 +80,12 @@
 								<option value="TC">제목+내용</option>
 
 
-							</select>
-							<input type='text' name='keyword' />
-							<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}' >
-							<input type='hidden' name='amount' value='${pageMaker.cri.amount}' >
-							<button class='btn btn-default'>검색</button>
+							</select> 
+							
+							<input type='text' name='keyword' placeholder="검색"/> 
+							<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'> 
+							<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+							<button class='btn btn-default'><i class="fa-solid fa-magnifying-glass"></i></button>
 
 
 						</form>
@@ -112,10 +120,9 @@
 				<!-- end Pagination -->
 
 				<form id='actionForm' action="/bangbang/board/list" method='get'>
-					<input type='hidden' name='pageNum'
-						value='${pageMaker.cri.pageNum}'> <input type='hidden'
-						name='amount' value='${pageMaker.cri.amount}'> 
-
+					<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum }'> 
+					<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+					<input type='hidden' name='start' value='${pageMaker.cri.start}'>
 				</form>
 
 
@@ -183,21 +190,22 @@
 
 						var actionForm = $("#actionForm");
 
-						$(".paginate_button a")
-								.on(
-										"click",
-										function(e) {
+						$(".paginate_button a").on(
+								"click",
+								function(e) {
 
-											e.preventDefault();
+									e.preventDefault();
 
-											console.log('click');
+									console.log('click');
 
-											actionForm.find(
-													"input[name='pageNum']")
-													.val($(this).attr("href"));
-											
-											actionForm.submit();
-										});
+									actionForm.find("input[name='pageNum']")
+											.val($(this).attr("href"));
+									
+									actionForm.find("input[name='start']")
+											.val(($(this).attr("href")-1)*10);
+
+									actionForm.submit();
+								});
 
 						$(".move")
 								.on(

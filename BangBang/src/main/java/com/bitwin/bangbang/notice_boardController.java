@@ -30,6 +30,7 @@ public class notice_boardController {
 		
 		log.info("list: " + cri);
 		
+		
 		model.addAttribute("list", service.getList(cri));
 //		model.addAttribute("pageMaker", new PageDTO(cri, 200));
 		
@@ -38,6 +39,7 @@ public class notice_boardController {
 		log.info("total: " + total);
 		
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
+
 		
 	}
 	

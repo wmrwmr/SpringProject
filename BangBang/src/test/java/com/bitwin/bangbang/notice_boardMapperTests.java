@@ -107,8 +107,8 @@ public class notice_boardMapperTests {
 		
 		Criteria cri = new Criteria();
 		
-		cri.setKeyword("2");
-		cri.setType("T");
+		cri.setKeyword("d");
+		cri.setType("TC");
 		
 		List<notice_boardVO> list = mapper.getListWithPaging(cri);
 		

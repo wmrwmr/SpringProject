@@ -12,9 +12,14 @@ public class Criteria {
 
 	private int pageNum;
 	private int amount;
-
+	private int start;
+	
+	
 	private String type;
 	private String keyword;
+
+	
+
 
 	public Criteria() {
 

@@ -67,10 +67,9 @@
   
  					 order by nidx desc, regdate desc
   
-  					limit #{pageNum}, #{amount}
+  					limit #{start}, #{amount}
   					]]>
 	</select>
-
 
 
 
