@@ -20,18 +20,36 @@
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 
+
+
+
+
+
+
+
 				<form role="form" action="/bangbang/board/register" method="post">
 					<div class="form-group">
+
+
 
 						<label>제목</label> <input class="form-control" name='title'>
 
 					</div>
 
-					<div class="form group">
-						<label>내용</label>
-						<textarea class="form-control" rows="3" name='content'></textarea>
 
-					</div>
+					<tr>
+						<th>내용</th>
+						<td><textarea id="content" name="content" ></textarea> 
+						<script
+								type="text/javascript">
+							// 글쓰기 editor 및 사진 업로드 기능
+							CKEDITOR.replace('content', {
+								filebrowserUploadUrl : '/bangbang/board/imageUpload'
+							});
+						</script></td>
+					</tr>
+	
+					<br>
 
 
 					<button type="submit" class="btn btn-default">등록</button>
@@ -49,3 +67,6 @@
 <!-- /.row -->
 
 <%@include file="../includes/footer.jsp"%>
+
+
+

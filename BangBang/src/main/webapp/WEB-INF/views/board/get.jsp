@@ -22,36 +22,35 @@
 			<div class="panel-body">
 
 
-<%-- 				<div class="form-group">
+				<%-- 				<div class="form-group">
 					<label>공지사항 번호</label> <input class="form-control" name='nidx'
 						value='<c:out value="${board.nidx}"/>' readonly='readonly'>
 
 				</div> --%>
 
 				<div class="form-group">
-					<label>제목</label> <input class="form-control" name='title'
-						value='<c:out value="${board.title }"/>' readonly='readonly'>
+
+					<h2><c:out value="${board.title }"/></h2> 
+					<hr style="border: solid 2px rgb(224,224,224);">
 				</div>
 
 				<div class="form-group">
-					<label>내용</label>
-					<textarea class="form-control" rows="15" name='content'
-						readonly="readonly"> <c:out value="${board.content }" /> </textarea>
+				    <c:out value="${board.content }" escapeXml="false" />
+					
 				</div>
 
-
+				<br>
 
 				<button data-oper='modify' class="btn btn-default">수정/삭제</button>
 				<button data-oper='list' class="btn btn-info">목록</button>
 
 				<form id='operForm' action="/bangbang/board/modify" method="get">
 					<input type='hidden' id='nidx' name='nidx'
-						value='<c:out value="${board.nidx}"/>'> 
-					<input type='hidden' name='pageNum' 
-						value='<c:out value="${cri.pageNum}"/>'> 
-					<input type='hidden' name='amount' 
-						value='<c:out value="${cri.amount}"/>'>
-					<input type='hidden' name='start' 
+						value='<c:out value="${board.nidx}"/>'> <input
+						type='hidden' name='pageNum'
+						value='<c:out value="${cri.pageNum}"/>'> <input
+						type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
+					<input type='hidden' name='start'
 						value='<c:out value="${cri.start}"/>'>
 
 				</form>
