@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">새 공지사항 등록</h1>
+		<h1 class="page-header">새 FAQ 등록</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -27,7 +27,7 @@
 
 
 
-				<form role="form" action="/bangbang/board/register" method="post">
+				<form role="form" action="/bangbang/faq/register" method="post">
 					<div class="form-group">
 
 					
@@ -37,19 +37,19 @@
 					</div>
 
 
-					<tr>
 						<th>내용</th>
 						<td><textarea id="content" name="content" ></textarea> 
 						<script
 								type="text/javascript">
 							// 글쓰기 editor 및 사진 업로드 기능
 							CKEDITOR.replace('content', {
-								filebrowserUploadUrl : '/bangbang/board/imageUpload'
+								filebrowserUploadUrl : '/bangbang/faq/imageUpload'
 							});
-						</script></td>
-					</tr>
+						</script></td> 
 	
 					<br>
+					
+				
 
 
 					<button type="submit" class="btn btn-default">등록</button>

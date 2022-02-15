@@ -73,7 +73,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="/bangbang/board/list"
-					style="margin-left: 860px; font-weight: bold;">방방술래 관리자 메뉴</a>
+					style="width: 300px; position: absolute; right: 60%; left: 40%; text-align: center; font-weight: bold;">방방술래 서비스 관리</a>
 			</div>
 			<!-- /.navbar-header -->
 
@@ -112,10 +112,12 @@
                         </li>  -->
 						<li><a href="/bangbang/board/list"><i
 								class="fa-solid fa-circle-exclamation"></i> 공지사항</a></li>
-						<li><a href="#"><i class="fa-regular fa-circle-question"></i>
+						<li><a href="/bangbang/faq/list"><i class="fa-regular fa-circle-question"></i>
 								자주묻는 질문(FAQ)</a></li>
-						<li><a href="#"><i class="fa-solid fa-headset"></i> 1:1
-								문의</a></li>
+						<li><a href="/bangbang/paq/adminList"><i class="fa-solid fa-headset">
+						</i> 1:1 문의(관리자)</a></li>								
+						<li><a href="/bangbang/paq/memberList"><i class="fa-solid fa-headset">
+						</i> 1:1 문의(회원)</a></li>
 
 
 					</ul>

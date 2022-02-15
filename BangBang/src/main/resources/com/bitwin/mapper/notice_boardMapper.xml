@@ -22,8 +22,8 @@
 	<insert id="insertSelectKey">
 
 
-		insert into `project`.`notice_board` (title,content,
-		regdate, updatedate)
+		insert into `project`.`notice_board` 
+		(title,content, regdate, updatedate)
 		values (#{title}, #{content}, current_timestamp(),
 		current_timestamp())
 	</insert>
@@ -96,8 +96,8 @@
 						<when test="type == 'C'.toString()">
 							content like CONCAT('%',#{keyword},'%')
 						</when>
-						<when test="type == 'W'.toString()">
-							writer like CONCAT('%',#{keyword},'%')
+						<when test="type == 'TC'.toString()">
+							title like CONCAT('%',#{keyword},'%') or content like CONCAT('%',#{keyword},'%')
 						</when>
 					</choose>
 				</trim>

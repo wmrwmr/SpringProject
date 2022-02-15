@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-8" style="padding-left: 300px;">
-		<h1 class="page-header">공지사항 수정/삭제</h1>
+		<h1 class="page-header">FAQ 수정/삭제</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -21,7 +21,7 @@
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 
-				<form role="form" action="/bangbang/board/modify" method="post">
+				<form role="form" action="/bangbang/faq/modify" method="post">
 
 					<input type='hidden' name='pageNum'
 						value='<c:out value="${cri.pageNum }"/>'> <input
@@ -32,49 +32,53 @@
 
 
 					<div class="form-group">
-						<input type='hidden' class="form-control" name='nidx'
-							value='<c:out value="${board.nidx}"/>' readonly='readonly'>
+						<input type='hidden' class="form-control" name='fqidx'
+							value='<c:out value="${faq.fqidx}"/>' readonly='readonly'>
 
 					</div>
 
 					<div class="form-group">
 						<label>제목</label> <input class="form-control" name='title'
-							value='<c:out value="${board.title }"/>'>
+							value='<c:out value="${faq.title }"/>'>
 					</div>
 
 					<div class="form group">
 						<tr>
 							<th>내용</th>
-							<td><textarea id="content" name="content">${board.content}</textarea>
+							<td><textarea id="content" name="content">${faq.content}</textarea>
 								<script type="text/javascript">
 									// 글쓰기 editor 및 사진 업로드 기능
 									CKEDITOR
 											.replace(
 													'content',
 													{
-														filebrowserUploadUrl : '/bangbang/board/imageUpload'
+														filebrowserUploadUrl : '/bangbang/faq/imageUpload'
 													});
 								</script></td>
 
 					</div>
-
+					
+					
+					
+					
 					<br>
+
+
 
 
 					<div class="form-group">
 						<label>등록일</label> <input class="form-control" name='regDate'
-							value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${board.regdate }"/>'
+							value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${faq.regdate }"/>'
 							readonly='readonly'>
 					</div>
 
 					<div class="form-group">
 						<label>수정일</label> <input class="form-control" name='updateDate'
-							value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${board.updatedate }"/>'
+							value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${faq.updatedate }"/>'
 							readonly='readonly'>
 					</div>
-
 					<br>
-					
+
 					<button type="submit" data-oper='modify' class="btn btn-default">수정</button>
 					<button type="submit" data-oper='remove' class="btn btn-default" style="background-color: rgb(255,0, 0, 70%); color: white;">삭제</button>
 					<button type="submit" data-oper='list' class="btn btn-info">목록</button>
@@ -89,16 +93,11 @@
 <%@include file="../includes/footer.jsp"%>
 
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
 
 						var formObj = $("form");
 
-						$('button')
-								.on(
-										"click",
-										function(e) {
+						$('button').on("click", function(e) {
 
 											e.preventDefault();
 
@@ -110,11 +109,11 @@
 											if (operation === 'remove') {
 												formObj
 														.attr("action",
-																"/bangbang/board/remove");
+																"/bangbang/faq/remove");
 											} else if (operation === 'list') {
 												//move to list
 												formObj.attr("action",
-														"/bangbang/board/list")
+														"/bangbang/faq/list")
 														.attr("method", "get");
 												var pageNumTag = $(
 														"input[name='pageNum']")
