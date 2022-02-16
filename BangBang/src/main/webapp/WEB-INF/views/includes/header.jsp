@@ -47,6 +47,11 @@
 
 	
 	<script type="text/javascript" src="/bangbang/resources/ckeditor/ckeditor.js"></script>
+	
+
+
+
+
 
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

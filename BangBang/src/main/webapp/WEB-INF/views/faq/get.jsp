@@ -6,7 +6,7 @@
 <%@include file="../includes/header.jsp"%>
 
 <div class="row">
-	<div class="col-lg-8" style="padding-left: 300px;">
+	<div class="col-lg-9" style="padding-left: 200px;">
 		<h1 class="page-header">자주묻는 질문(FAQ)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
@@ -15,7 +15,7 @@
 
 
 <div class="row">
-	<div class="col-lg-8" style="padding-left: 300px;">
+	<div class="col-lg-9" style="padding-left: 200px;">
 		<div class="panel panel-default">
 			<div class="panel-heading">&nbsp;</div>
 			<!-- /.panel-heading -->
@@ -81,6 +81,8 @@
 		</div>
 	</div>
 </div>
+
+
 
 
 <%@include file="../includes/footer.jsp"%>

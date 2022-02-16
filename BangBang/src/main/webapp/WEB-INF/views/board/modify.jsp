@@ -6,16 +6,14 @@
 <%@include file="../includes/header.jsp"%>
 
 <div class="row">
-	<div class="col-lg-8" style="padding-left: 300px;">
+	<div class="col-lg-9" style="padding-left: 200px;">
 		<h1 class="page-header">공지사항 수정/삭제</h1>
 	</div>
-	<!-- /.col-lg-12 -->
 </div>
-<!-- /.row -->
 
 
 <div class="row">
-	<div class="col-lg-8" style="padding-left: 300px;">
+	<div class="col-lg-9" style="padding-left: 200px;">
 		<div class="panel panel-default">
 			<div class="panel-heading">&nbsp;</div>
 			<!-- /.panel-heading -->
@@ -84,6 +82,8 @@
 		</div>
 	</div>
 </div>
+
+
 
 
 <%@include file="../includes/footer.jsp"%>
