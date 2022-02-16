@@ -11,6 +11,7 @@ public class paqVO {
 	private int uidx;
 	private String title;
 	private String content;
+	private String reply;
 	private Date regdate;
 	private Date updatedate;
 	

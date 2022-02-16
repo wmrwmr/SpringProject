@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-8" style="padding-left: 300px;">
-		<h1 class="page-header">1:1 문의(회원)</h1>
+		<h1 class="page-header">1:1 문의(회원 마이페이지)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -55,7 +55,21 @@
 					<c:out value="${paq.content }" escapeXml="false" />
 
 				</div>
+				<br>
+				<br>								
+				
+				<!-- 답변 내용 -->
+				
 
+				<div class="form-group">
+					<c:out value="${paq.reply }" escapeXml="false" />
+
+				</div>
+				
+				
+
+
+				<br>
 
 
 				<br>

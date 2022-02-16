@@ -111,22 +111,36 @@ public class paqController {
 	}
 	
 	
+	  @GetMapping({"/get", "/replyRegister"})
+		public void get(@RequestParam("pqidx") int pqidx, @ModelAttribute("cri") Criteria cri, Model model) {
+			
+			log.info("/get or replyRegister");
+			model.addAttribute("paq", service.get(pqidx));
+			
+		}
+	  
+	  
 	
-	/*
-	 * @PostMapping("/modify") public String modify(paqVO
-	 * paq, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
-	 * 
-	 * log.info("modify: " + paq);
-	 * 
-	 * if(service.modify(paq)) { rttr.addFlashAttribute("result", "success");
-	 * 
-	 * }
-	 * 
-	 * rttr.addAttribute("pageNum", cri.getPageNum()); rttr.addAttribute("amount",
-	 * cri.getAmount()); rttr.addAttribute("start", cri.getStart());
-	 * 
-	 * return "redirect:/paq/list"; }
-	 */
+	  @PostMapping("/replyRegister") 
+	  public String replyRegister(paqVO paq, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
+	  
+	  log.info("modify: " + paq);
+	  
+	  if(service.modify(paq)) { rttr.addFlashAttribute("result", "success");
+	  
+	  }
+	  
+	  rttr.addAttribute("pageNum", cri.getPageNum()); rttr.addAttribute("amount",
+	  cri.getAmount()); rttr.addAttribute("start", cri.getStart());
+	  
+	  return "redirect:/paq/adminList"; }
+	  
+	  
+	  
+	  
+	 
+
+		
 	
 	
 	

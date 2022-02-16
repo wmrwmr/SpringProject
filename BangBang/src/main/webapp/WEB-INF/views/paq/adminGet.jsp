@@ -37,7 +37,6 @@
 						<c:out value="${paq.title }" />
 					</h2>
 
-
 					<div
 						style="color: rgb(0, 0, 0, 0.5); display: inline; float: right; padding-right: 10px;">
 						<i class="fa-solid fa-clock"></i>
@@ -55,21 +54,16 @@
 					<c:out value="${paq.content }" escapeXml="false" />
 
 				</div>
-				
-				
-				
+					
 				
 				<br>
-				<br>				
-				
-				
+				<br>								
 				
 				<!-- 답변 내용 -->
 				
 
-
 				<div class="form-group">
-					<c:out value="${paa.content }" escapeXml="false" />
+					<c:out value="${paq.reply }" escapeXml="false" />
 
 				</div>
 				
@@ -79,7 +73,25 @@
 				<br>
 				<br>
 
-				<button data-oper='answerRegister' class="btn btn-default">답변 작성</button>
+				<button data-oper='replyRegister' class="btn btn-default">답변</button>
+				
+				<form id='operForm' action="/bangbang/paq/replyRegister" method="get" style="display: inline;">
+					<input type='hidden' id='pqidx' name='pqidx'
+						value='<c:out value="${paq.pqidx}"/>'> <input
+						type='hidden' name='pageNum'
+						value='<c:out value="${cri.pageNum}"/>'> <input
+						type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
+					<input type='hidden' name='start'
+						value='<c:out value="${cri.start}"/>'>
+									
+				</form>
+				
+				
+				
+				
+				
+				
+				
 				<button data-oper='list' class="btn btn-info">목록</button>
 
 				<form id='operForm' action="/bangbang/paq/adminGet" method="get" style="display: inline;">
@@ -90,13 +102,13 @@
 						type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
 					<input type='hidden' name='start'
 						value='<c:out value="${cri.start}"/>'>
-						
-						
-						
-
-						
-						
+									
 				</form>
+				
+				
+				
+				
+				
 
 				<form id='operForm' action="/bangbang/paq/remove" method="post" style="display: inline;">
 				
@@ -128,9 +140,9 @@
 
 		var operForm = $("#operForm");
 
-		$("button[data-oper='answerRegister']").on("click", function(e) {
+		$("button[data-oper='replyRegister']").on("click", function(e) {
 
-			operForm.attr("action", "/bangbang/paa/adminRegister").submit();
+			operForm.attr("action", "/bangbang/paq/replyRegister").submit();
 
 		});
 		
