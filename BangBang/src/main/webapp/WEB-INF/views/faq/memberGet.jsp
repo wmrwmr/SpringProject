@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-9" style="padding-left: 200px;">
-		<h1 class="page-header">자주묻는 질문(FAQ) (관리자)</h1>
+		<h1 class="page-header">자주묻는 질문(FAQ) (회원)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -60,7 +60,7 @@
 
 				<br>
 
-				<button data-oper='modify' class="btn btn-default">수정/삭제</button>
+
 				<button data-oper='list' class="btn btn-info">목록</button>
 
 				<form id='operForm' action="/bangbang/faq/modify" method="get">
@@ -101,7 +101,7 @@
 		$("button[data-oper='list']").on("click", function(e) {
 
 			operForm.find("#fqidx").remove();
-			operForm.attr("action", "/bangbang/faq/list")
+			operForm.attr("action", "/bangbang/faq/memberList")
 			operForm.submit();
 
 		});

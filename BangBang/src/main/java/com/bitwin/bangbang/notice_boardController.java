@@ -61,6 +61,27 @@ public class notice_boardController {
 	}
 	
 	
+	@GetMapping("/memberList")
+	public void memberList(Criteria cri, Model model) {
+		
+		log.info("list: " + cri);
+		
+		
+		model.addAttribute("list", service.getList(cri));
+//		model.addAttribute("pageMaker", new PageDTO(cri, 200));
+		
+		int total = service.getTotal(cri);
+		
+		log.info("total: " + total);
+		
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
+
+		
+	}
+	
+	
+	
+	
 	
 	@PostMapping("/register")
 	public String register(notice_boardVO board, RedirectAttributes rttr) {
@@ -74,7 +95,7 @@ public class notice_boardController {
 		return "redirect:/board/list";
 	}
 	
-	@GetMapping({"/get", "/modify"})
+	@GetMapping({"/get", "/modify", "/memberGet"})
 	public void get(@RequestParam("nidx") int nidx, @ModelAttribute("cri") Criteria cri, Model model) {
 		
 		log.info("/get or modify");

@@ -60,6 +60,25 @@ public class faqController {
 		
 	}
 	
+	@GetMapping("memberList")
+	public void memberList(Criteria cri, Model model) {
+		
+		log.info("list: " + cri);
+		
+		
+		model.addAttribute("list", service.getList(cri));
+//		model.addAttribute("pageMaker", new PageDTO(cri, 200));
+		
+		int total = service.getTotal(cri);
+		
+		log.info("total: " + total);
+		
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
+
+		
+	}
+	
+	
 	
 	
 	@PostMapping("/register")
@@ -74,7 +93,7 @@ public class faqController {
 		return "redirect:/faq/list";
 	}
 	
-	@GetMapping({"/get", "/modify"})
+	@GetMapping({"/get", "/modify", "/memberGet"})
 	public void get(@RequestParam("fqidx") int fqidx, @ModelAttribute("cri") Criteria cri, Model model) {
 		
 		log.info("/get or modify");

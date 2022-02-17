@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">공지사항(관리자)</h1>
+		<h1 class="page-header">자주묻는 질문(FAQ) (회원)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -18,8 +18,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				&nbsp;
-				<button id="regBtn" type="button" class="btn btn-xs pull-right">새
-					글 쓰기</button>
+
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
@@ -33,22 +32,19 @@
 						</tr> -->
 					</thead>
 
-					<c:forEach items="${list}" var="board">
+					<c:forEach items="${list}" var="faq">
 
 						<tr>
-							<%-- <td><c:out value="${board.nidx}" /></td> --%>
+							<%-- <td><c:out value="${faq.fqidx}" /></td> --%>
 
-							<td style="padding: 15px;"><a class='move'
-								href='<c:out value="${board.nidx}"/>'
-								style="padding-right: 500px; padding-left: 20px;"> <c:out
-										value="${board.title}" /></a></td>
+							<td style="padding: 15px;"><a class='move' href='<c:out value="${faq.fqidx}"/>'
+								style="padding-right: 500px; padding-left: 20px;" > <c:out value="${faq.title}" /></a></td>
 
 
 
 							<td style="padding: 15px; color: rgb(0, 0, 0, 0.5);"><i
-								class="fa-solid fa-clock"
-								style="padding-right: 8px; padding-left: 10px;"></i> <fmt:formatDate
-									pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
+								class="fa-solid fa-clock" style="padding-right: 8px; padding-left: 10px;"></i> <fmt:formatDate
+									pattern="yyyy-MM-dd" value="${faq.regdate}" /></td>
 
 
 
@@ -59,7 +55,7 @@
 
 
 							<%-- 	<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${board.updatedate}" /></td> --%>
+									value="${faq.updatedate}" /></td> --%>
 
 						</tr>
 
@@ -70,10 +66,10 @@
 
 
 
-				<div class='pull-left' style="padding-top: 18px;">
+				<div class='pull-left' style="padding-top: 18px;" >
 					<div class="col-lg-12">
 
-						<form id='searchForm' action="/bangbang/board/list" method="get">
+						<form id='searchForm' action="/bangbang/faq/list" method="get">
 							<select name='type'>
 
 								<option value="">--</option>
@@ -82,18 +78,18 @@
 								<option value="TC">제목+내용</option>
 
 
-							</select> <input type='text' name='keyword' placeholder="검색" /> <input
-								type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
-							<input type='hidden' name='amount'
-								value='${pageMaker.cri.amount}'>
-							<button class='btn btn-default'>
-								<i class="fa-solid fa-magnifying-glass"></i>
-							</button>
+							</select> 
+							
+							<input type='text' name='keyword' placeholder="검색"/> 
+							<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'> 
+							<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+							<button class='btn btn-default'><i class="fa-solid fa-magnifying-glass"></i></button>
 
 
 						</form>
 					</div>
 				</div>
+
 
 
 
@@ -119,21 +115,12 @@
 					</ul>
 
 				</div>
-
-
-
-
-
-
-
-
 				<!-- end Pagination -->
 
-				<form id='actionForm' action="/bangbang/board/list" method='get'>
-					<input type='hidden' name='pageNum'
-						value='${pageMaker.cri.pageNum }'> <input type='hidden'
-						name='amount' value='${pageMaker.cri.amount}'> <input
-						type='hidden' name='start' value='${pageMaker.cri.start}'>
+				<form id='actionForm' action="/bangbang/faq/list" method='get'>
+					<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum }'> 
+					<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+					<input type='hidden' name='start' value='${pageMaker.cri.start}'>
 				</form>
 
 
@@ -171,8 +158,6 @@
 
 
 
-
-
 <%@include file="../includes/footer.jsp"%>
 
 <script type="text/javascript">
@@ -197,7 +182,7 @@
 
 						$("#regBtn").on("click", function() {
 
-							self.location = "/bangbang/board/register";
+							self.location = "/bangbang/faq/memberRegister";
 
 						})
 
@@ -213,48 +198,28 @@
 
 									actionForm.find("input[name='pageNum']")
 											.val($(this).attr("href"));
-
-									actionForm.find("input[name='start']").val(
-											($(this).attr("href") - 1) * 10);
+									
+									actionForm.find("input[name='start']")
+											.val(($(this).attr("href")-1)*10);
 
 									actionForm.submit();
 								});
 
-						$(".move")
-								.on(
-										"click",
-										function(e) {
+						$(".move").on("click", function(e) {
 
 											e.preventDefault();
 											actionForm
-													.append("<input type='hidden' name='nidx' value='"
+													.append("<input type='hidden' name='fqidx' value='"
 															+ $(this).attr(
 																	"href")
 															+ "'>");
 											actionForm.attr("action",
-													"/bangbang/board/get");
+													"/bangbang/faq/memberGet");
 											actionForm.submit();
 
 										});
 
-						// 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
-						var floatPosition = parseInt($("#floatMenu").css('top'));
-						// 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
-
-						$(window).scroll(function() {
-							// 현재 스크롤 위치를 가져온다.
-							var scrollTop = $(window).scrollTop();
-							var newPosition = scrollTop + floatPosition + "px";
-
-							/* 애니메이션 없이 바로 따라감
-							 $("#floatMenu").css('top', newPosition);
-							 */
-
-							$("#floatMenu").stop().animate({
-								"top" : newPosition
-							}, 500);
-
-						}).scroll();
-
 					});
+	
+
 </script>

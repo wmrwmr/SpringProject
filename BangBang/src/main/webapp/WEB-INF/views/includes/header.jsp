@@ -116,11 +116,20 @@
                            /input-group
                         </li>  -->
 						<li><a href="/bangbang/board/list"><i
-								class="fa-solid fa-circle-exclamation"></i> 공지사항</a></li>
+								class="fa-solid fa-circle-exclamation"></i> 공지사항(관리자)</a></li>
+								
+						<li><a href="/bangbang/board/memberList"><i
+								class="fa-solid fa-circle-exclamation"></i> 공지사항(회원)</a></li>
+								
 						<li><a href="/bangbang/faq/list"><i class="fa-regular fa-circle-question"></i>
-								자주묻는 질문(FAQ)</a></li>
+								자주묻는 질문(FAQ)(관리자)</a></li>
+								
+						<li><a href="/bangbang/faq/memberList"><i class="fa-regular fa-circle-question"></i>
+								자주묻는 질문(FAQ)(회원)</a></li>
+								
 						<li><a href="/bangbang/paq/adminList"><i class="fa-solid fa-headset">
-						</i> 1:1 문의(관리자)</a></li>								
+						</i> 1:1 문의(관리자)</a></li>	
+													
 						<li><a href="/bangbang/paq/memberList"><i class="fa-solid fa-headset">
 						</i> 1:1 문의(회원)</a></li>
 

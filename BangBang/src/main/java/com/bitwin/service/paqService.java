@@ -23,6 +23,8 @@ public interface paqService {
 	public int memberGetTotal(Criteria cri);
 	
 	public int adminGetTotal(Criteria cri);
+
+	public String getEmail(int uidx);
 	
 	
 }

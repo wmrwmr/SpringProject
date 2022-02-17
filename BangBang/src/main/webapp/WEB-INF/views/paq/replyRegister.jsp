@@ -27,7 +27,7 @@
 
 
 
-				<form role="form" action="/bangbang/paq/replyRegister" method="post">
+				<form role="form" action="/bangbang/paq/replyRegister" method="post" >
 
 
 					<div class="form-group">
@@ -61,12 +61,38 @@
 					</script></td> <br>
 
 
-
-
 					<button type="submit" class="btn btn-default">등록</button>
-					<button type="reset" class="btn btn-default">초기화</button>
+						
+
+					
 
 				</form>
+				
+
+				
+				<form action="/bangbang/paq/mailSend" method="post">
+					
+						<div class="form-group">
+						<input type='hidden' class="form-control" name='pqidx'
+						value='<c:out value="${paq.pqidx}"/>' readonly='readonly'>
+						</div>
+					
+					
+					
+						<div class="form-group">
+						<input type='hidden' class="form-control" name='uidx'
+						value='<c:out value="${paq.uidx}"/>' readonly='readonly'>
+						</div>
+						
+						
+						
+						<button type="submit" class="btn btn-default">알림 전송</button>
+						
+					</form>
+
+					
+					
+					
 
 			</div>
 			<!-- /.panel-body -->

@@ -154,6 +154,13 @@
 			</foreach>
 		</trim>
 	</sql>
+	
+	
+	<select id="getEmail" resultType="String">
+	
+		select email from project.user where uidx=#{uidx}
+	
+	</select>
 
 
 

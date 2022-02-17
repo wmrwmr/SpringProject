@@ -7,13 +7,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.UUID;
 
+import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -129,6 +134,11 @@ public class paqController {
 	  if(service.modify(paq)) { rttr.addFlashAttribute("result", "success");
 	  
 	  }
+	  
+	  
+	  
+	  
+	  
 	  
 	  rttr.addAttribute("pageNum", cri.getPageNum()); rttr.addAttribute("amount",
 	  cri.getAmount()); rttr.addAttribute("start", cri.getStart());
@@ -273,10 +283,41 @@ public class paqController {
     			}
     		}
     }
-	
-	
-	
-	
+    
+    
+    
+	@Autowired
+	private JavaMailSender mailSender;
+    
+	//mailSend 코드
+	@RequestMapping(value = "/mailSend", method = RequestMethod.POST)
+	public String mailSend(HttpServletRequest request,@RequestParam("pqidx") int pqidx, @ModelAttribute("cri") Criteria cri, @RequestParam("uidx") int uidx, RedirectAttributes rttr) {
+		try {
+			MimeMessage mimeMessage = mailSender.createMimeMessage();
+		    MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+		    String emailReceiver = service.getEmail(uidx);
+		    messageHelper.setFrom("wnrak0116@gmail.com"); // 보내는사람 이메일 여기선 google 메일서버 사용하는 아이디를 작성하면됨
+		    messageHelper.setTo(emailReceiver); // 받는사람 이메일
+		    messageHelper.setSubject("안녕하세요. 방방술래 고객센터입니다."); // 메일제목
+		    messageHelper.setText("고객님께서 문의해주신 1:1 문의 답변이 등록되었으니, "
+		    					+ "홈페이지에 접속하셔서 확인해주시기 바랍니다."
+		    					+ "감사합니다."); // 메일 내용
+		    
+		    mailSender.send(mimeMessage);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		 rttr.addAttribute("pqidx", pqidx); 
+		 rttr.addAttribute("pageNum", cri.getPageNum()); 
+		 rttr.addAttribute("amount", cri.getAmount()); 
+		 rttr.addAttribute("start", cri.getStart());
+		 
+		
+		return "redirect:/paq/replyRegister";
+	}
 	
 	
 	

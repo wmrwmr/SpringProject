@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">공지사항(관리자)</h1>
+		<h1 class="page-header">공지사항(회원)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -18,8 +18,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				&nbsp;
-				<button id="regBtn" type="button" class="btn btn-xs pull-right">새
-					글 쓰기</button>
+
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
@@ -232,7 +231,7 @@
 																	"href")
 															+ "'>");
 											actionForm.attr("action",
-													"/bangbang/board/get");
+													"/bangbang/board/memberGet");
 											actionForm.submit();
 
 										});

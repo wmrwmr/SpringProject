@@ -53,7 +53,6 @@
 
 
 					<button type="submit" class="btn btn-default">등록</button>
-					<button type="reset" class="btn btn-default">초기화</button>
 
 				</form>
 

@@ -86,6 +86,13 @@ public class paqServiceImpl implements paqService {
 		return mapper.adminGetTotalCount(cri);
 	}
 	
+	@Override
+	public String getEmail(int uidx) {
+		
+		log.info("get email");
+		return mapper.getEmail(uidx);
+	}
+	
 	
 	
 	
