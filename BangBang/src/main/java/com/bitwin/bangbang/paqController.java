@@ -127,11 +127,24 @@ public class paqController {
 	  
 	
 	  @PostMapping("/replyRegister") 
-	  public String replyRegister(paqVO paq, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
+	  public String replyRegister(paqVO paq, @ModelAttribute("cri") Criteria cri, @RequestParam("pqidx") int pqidx, RedirectAttributes rttr) {
 	  
 	  log.info("modify: " + paq);
 	  
-	  if(service.modify(paq)) { rttr.addFlashAttribute("result", "success");
+	  if(service.modify(paq)) { rttr.addFlashAttribute("result", "answer");
+	  
+	  
+	  
+	  
+	  
+		 rttr.addAttribute("pqidx", pqidx); 
+		 rttr.addAttribute("pageNum", cri.getPageNum()); 
+		 rttr.addAttribute("amount", cri.getAmount()); 
+		 rttr.addAttribute("start", cri.getStart());
+		 
+		 
+	  
+	  return "redirect:/paq/replyRegister";
 	  
 	  }
 	  
@@ -309,7 +322,7 @@ public class paqController {
 		}
 		
 		
-		
+		 rttr.addFlashAttribute("result", "success");
 		 rttr.addAttribute("pqidx", pqidx); 
 		 rttr.addAttribute("pageNum", cri.getPageNum()); 
 		 rttr.addAttribute("amount", cri.getAmount()); 

@@ -126,16 +126,40 @@
 
 
 				<!-- Modal -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+				<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
 					aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">&times;</button>
-								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+								<h4 class="modal-title" id="myModalLabel">방방술래 서비스 관리</h4>
 							</div>
-							<div class="modal-body">처리가 완료되었습니다.</div>
+							<div class="modal-body">삭제가 완료되었습니다.</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary"
+									data-dismiss="modal">닫기</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!-- /.modal -->
+				
+				
+				
+				<!-- Modal -->
+				<div class="modal fade" id="modifyModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">방방술래 서비스 관리</h4>
+							</div>
+							<div class="modal-body">수정이 완료되었습니다.</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-primary"
 									data-dismiss="modal">닫기</button>
@@ -162,25 +186,34 @@
 <%@include file="../includes/footer.jsp"%>
 
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
 
-						var result = '<c:out value="${result}"/>';
+					var result = '<c:out value="${result}"/>';
 
-						checkModal(result);
+					checkModal(result);
 
-						history.replaceState({}, null, null);
+					history.replaceState({}, null, null);
 
-						function checkModal(result) {
+					function checkModal(result) {
 
-							if (result === '' || history.state) {
-								return;
-							}
-
-							$("#myModal").modal("show");
+						if (result === '' || history.state) {
+							return;
+				
+						} else if(result === 'delete') {
+							$("#deleteModal").modal("show");
+				
+						} else if(result === 'modify') {
+							$("#modifyModal").modal("show");
 						}
 
+					}
+
+						
+						
+						
+						
+						
+						
 						$("#regBtn").on("click", function() {
 
 							self.location = "/bangbang/faq/register";

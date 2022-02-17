@@ -107,7 +107,7 @@ public class faqController {
 		log.info("modify: " + faq);
 		
 		if(service.modify(faq)) {
-			rttr.addFlashAttribute("result", "success");
+			rttr.addFlashAttribute("result", "modify");
 			
 		}
 		
@@ -126,7 +126,7 @@ public class faqController {
 		
 		if(service.remove(fqidx)) {
 			
-			rttr.addFlashAttribute("result", "success");
+			rttr.addFlashAttribute("result", "delete");
 			
 		}
 		

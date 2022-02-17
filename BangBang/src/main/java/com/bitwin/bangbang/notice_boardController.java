@@ -109,7 +109,7 @@ public class notice_boardController {
 		log.info("modify: " + board);
 		
 		if(service.modify(board)) {
-			rttr.addFlashAttribute("result", "success");
+			rttr.addFlashAttribute("result", "modify");
 			
 		}
 		
@@ -128,7 +128,7 @@ public class notice_boardController {
 		
 		if(service.remove(nidx)) {
 			
-			rttr.addFlashAttribute("result", "success");
+			rttr.addFlashAttribute("result", "delete");
 			
 		}
 		

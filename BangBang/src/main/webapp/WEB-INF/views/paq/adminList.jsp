@@ -133,9 +133,9 @@
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">&times;</button>
-								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+								<h4 class="modal-title" id="myModalLabel">방방술래 서비스 관리</h4>
 							</div>
-							<div class="modal-body">처리가 완료되었습니다.</div>
+							<div class="modal-body">삭제가 완료되었습니다.</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-primary"
 									data-dismiss="modal">닫기</button>
