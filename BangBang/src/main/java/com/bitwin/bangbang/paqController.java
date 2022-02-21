@@ -49,7 +49,7 @@ public class paqController {
 	
 
 	
-	@GetMapping("/memberList")
+	@GetMapping("/member-list")
 	public void memberList(Criteria cri, Model model) {
 		
 		log.info("list: " + cri);
@@ -67,7 +67,7 @@ public class paqController {
 		
 	}
 	
-	@GetMapping("/adminList")
+	@GetMapping("/admin-list")
 	public void adminList(Criteria cri, Model model) {
 		
 		log.info("list: " + cri);
@@ -87,7 +87,7 @@ public class paqController {
 	
 	
 	
-	@PostMapping("/memberRegister")
+	@PostMapping("/member-register")
 	public String register(paqVO paq, RedirectAttributes rttr) {
 		
 		log.info("register: " + paq);
@@ -96,10 +96,10 @@ public class paqController {
 		
 		rttr.addFlashAttribute("result", paq.getPqidx());
 		
-		return "redirect:/paq/memberList";
+		return "redirect:/paq/member-list";
 	}
 	
-	@GetMapping({"/memberGet"})
+	@GetMapping({"/member-get"})
 	public void memberGet(@RequestParam("pqidx") int pqidx, @ModelAttribute("cri") Criteria cri, Model model) {
 		
 		log.info("/adminGet or modify");
@@ -107,7 +107,7 @@ public class paqController {
 		
 	}
 	
-	@GetMapping({"/adminGet"})
+	@GetMapping({"/admin-get"})
 	public void adminGet(@RequestParam("pqidx") int pqidx, @ModelAttribute("cri") Criteria cri, Model model) {
 		
 		log.info("/adminGet or modify");
@@ -116,7 +116,7 @@ public class paqController {
 	}
 	
 	
-	  @GetMapping({"/get", "/replyRegister"})
+	  @GetMapping({"/get", "/reply-register"})
 		public void get(@RequestParam("pqidx") int pqidx, @ModelAttribute("cri") Criteria cri, Model model) {
 			
 			log.info("/get or replyRegister");
@@ -126,7 +126,7 @@ public class paqController {
 	  
 	  
 	
-	  @PostMapping("/replyRegister") 
+	  @PostMapping("/reply-register") 
 	  public String replyRegister(paqVO paq, @ModelAttribute("cri") Criteria cri, @RequestParam("pqidx") int pqidx, RedirectAttributes rttr) {
 	  
 	  log.info("modify: " + paq);
@@ -144,7 +144,7 @@ public class paqController {
 		 
 		 
 	  
-	  return "redirect:/paq/replyRegister";
+	  return "redirect:/paq/reply-register";
 	  
 	  }
 	  
@@ -156,7 +156,7 @@ public class paqController {
 	  rttr.addAttribute("pageNum", cri.getPageNum()); rttr.addAttribute("amount",
 	  cri.getAmount()); rttr.addAttribute("start", cri.getStart());
 	  
-	  return "redirect:/paq/adminList"; }
+	  return "redirect:/paq/admin-list"; }
 	  
 	  
 	  
@@ -181,10 +181,10 @@ public class paqController {
 	  rttr.addAttribute("pageNum", cri.getPageNum()); rttr.addAttribute("amount",
 	  cri.getAmount()); rttr.addAttribute("start", cri.getStart());
 	  
-	 return "redirect:/paq/adminList"; }
+	 return "redirect:/paq/admin-list"; }
 	 
 	
-	@GetMapping("/memberRegister")
+	@GetMapping("/member-register")
 	public void memberRegister() {
 		
 	}
@@ -329,7 +329,7 @@ public class paqController {
 		 rttr.addAttribute("start", cri.getStart());
 		 
 		
-		return "redirect:/paq/replyRegister";
+		return "redirect:/paq/reply-register";
 	}
 	
 	

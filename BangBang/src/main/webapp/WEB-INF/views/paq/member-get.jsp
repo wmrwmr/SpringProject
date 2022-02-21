@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-9" style="padding-left: 200px;">
-		<h1 class="page-header" >공지사항 (회원)</h1>
+		<h1 class="page-header">1:1 문의(회원 마이페이지)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -23,43 +23,63 @@
 
 
 				<%-- 				<div class="form-group">
-					<label>공지사항 번호</label> <input class="form-control" name='nidx'
-						value='<c:out value="${board.nidx}"/>' readonly='readonly'>
+					<label>공지사항 번호</label> <input class="form-control" name='pqidx'
+						value='<c:out value="${paq.pqidx}"/>' readonly='readonly'>
 
 				</div> --%>
-				
-				
-		
+
+
+
 
 				<div class="form-group" style="display: inline;">
 
-				<h2><c:out value="${board.title }"/></h2> 
-					
-					
-				<div style="color: rgb(0, 0, 0, 0.5); display: inline; float:right; padding-right: 10px;">
-				<i class="fa-solid fa-clock"></i> 
-				<fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></div>
+					<h2>
+						<c:out value="${paq.title }" />
+					</h2>
+
+
+					<div
+						style="color: rgb(0, 0, 0, 0.5); display: inline; float: right; padding-right: 10px;">
+						<i class="fa-solid fa-clock"></i>
+						<fmt:formatDate pattern="yyyy-MM-dd" value="${paq.regdate}" />
+					</div>
 				</div>
-				
+
 				<br>
-				
-				<hr style="border: solid 2px rgb(224,224,224);">
-				
-				
-				
+
+				<hr style="border: solid 2px rgb(224, 224, 224);">
+
+
+
 				<div class="form-group">
-				    <c:out value="${board.content }" escapeXml="false" />
-					
+					<c:out value="${paq.content }" escapeXml="false" />
+
 				</div>
+				<br>
+				<br>								
+				
+				<!-- 답변 내용 -->
+				
+
+				<div class="form-group">
+					<c:out value="${paq.reply }" escapeXml="false" />
+
+				</div>
+				
+				
+
 
 				<br>
 
 
+				<br>
+
+<!-- 				<button data-oper='modify' class="btn btn-default">수정/삭제</button> -->
 				<button data-oper='list' class="btn btn-info">목록</button>
 
-				<form id='operForm' action="/bangbang/board/modify" method="get">
-					<input type='hidden' id='nidx' name='nidx'
-						value='<c:out value="${board.nidx}"/>'> <input
+				<form id='operForm' action="/bangbang/paq/modify" method="get">
+					<input type='hidden' id='pqidx' name='pqidx'
+						value='<c:out value="${paq.pqidx}"/>'> <input
 						type='hidden' name='pageNum'
 						value='<c:out value="${cri.pageNum}"/>'> <input
 						type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
@@ -77,9 +97,6 @@
 </div>
 
 
-				
-
-
 <%@include file="../includes/footer.jsp"%>
 
 <script type="text/javascript">
@@ -87,16 +104,16 @@
 
 		var operForm = $("#operForm");
 
-		$("button[data-oper='modify']").on("click", function(e) {
+/* 		$("button[data-oper='modify']").on("click", function(e) {
 
-			operForm.attr("action", "/bangbang/board/modify").submit();
+			operForm.attr("action", "/bangbang/paq/modify").submit();
 
-		});
+		}); */
 
 		$("button[data-oper='list']").on("click", function(e) {
 
-			operForm.find("#nidx").remove();
-			operForm.attr("action", "/bangbang/board/memberList")
+			operForm.find("#pqidx").remove();
+			operForm.attr("action", "/bangbang/paq/member-list")
 			operForm.submit();
 
 		});

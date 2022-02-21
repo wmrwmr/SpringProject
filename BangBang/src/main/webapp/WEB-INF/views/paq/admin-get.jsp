@@ -75,7 +75,7 @@
 
 				<button data-oper='replyRegister' class="btn btn-default">답변</button>
 				
-				<form id='operForm' action="/bangbang/paq/replyRegister" method="get" style="display: inline;">
+				<form id='operForm' action="/bangbang/paq/reply-register" method="get" style="display: inline;">
 					<input type='hidden' id='pqidx' name='pqidx'
 						value='<c:out value="${paq.pqidx}"/>'> <input
 						type='hidden' name='pageNum'
@@ -142,7 +142,7 @@
 
 		$("button[data-oper='replyRegister']").on("click", function(e) {
 
-			operForm.attr("action", "/bangbang/paq/replyRegister").submit();
+			operForm.attr("action", "/bangbang/paq/reply-register").submit();
 
 		});
 		
@@ -160,7 +160,7 @@
 		$("button[data-oper='list']").on("click", function(e) {
 
 			operForm.find("#pqidx").remove();
-			operForm.attr("action", "/bangbang/paq/adminList")
+			operForm.attr("action", "/bangbang/paq/admin-list")
 			operForm.submit();
 
 		});

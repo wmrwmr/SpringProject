@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">1:1 문의(관리자)</h1>
+		<h1 class="page-header">자주묻는 질문(FAQ) (회원)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -18,8 +18,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				&nbsp;
-<!-- 				<button id="regBtn" type="button" class="btn btn-xs pull-right">새
-					글 쓰기</button> -->
+
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
@@ -33,19 +32,19 @@
 						</tr> -->
 					</thead>
 
-					<c:forEach items="${list}" var="paq">
+					<c:forEach items="${list}" var="faq">
 
 						<tr>
-							<%-- <td><c:out value="${paq.pqidx}" /></td> --%>
+							<%-- <td><c:out value="${faq.fqidx}" /></td> --%>
 
-							<td style="padding: 15px;"><a class='move' href='<c:out value="${paq.pqidx}"/>'
-								style="padding-right: 500px; padding-left: 20px;" > <c:out value="${paq.title}" /></a></td>
+							<td style="padding: 15px;"><a class='move' href='<c:out value="${faq.fqidx}"/>'
+								style="padding-right: 500px; padding-left: 20px;" > <c:out value="${faq.title}" /></a></td>
 
 
 
 							<td style="padding: 15px; color: rgb(0, 0, 0, 0.5);"><i
 								class="fa-solid fa-clock" style="padding-right: 8px; padding-left: 10px;"></i> <fmt:formatDate
-									pattern="yyyy-MM-dd" value="${paq.regdate}" /></td>
+									pattern="yyyy-MM-dd" value="${faq.regdate}" /></td>
 
 
 
@@ -56,7 +55,7 @@
 
 
 							<%-- 	<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${paq.updatedate}" /></td> --%>
+									value="${faq.updatedate}" /></td> --%>
 
 						</tr>
 
@@ -70,7 +69,7 @@
 				<div class='pull-left' style="padding-top: 18px;" >
 					<div class="col-lg-12">
 
-						<form id='searchForm' action="/bangbang/paq/adminList" method="get">
+						<form id='searchForm' action="/bangbang/faq/list" method="get">
 							<select name='type'>
 
 								<option value="">--</option>
@@ -118,7 +117,7 @@
 				</div>
 				<!-- end Pagination -->
 
-				<form id='actionForm' action="/bangbang/paq/adminList" method='get'>
+				<form id='actionForm' action="/bangbang/faq/list" method='get'>
 					<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum }'> 
 					<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 					<input type='hidden' name='start' value='${pageMaker.cri.start}'>
@@ -133,9 +132,9 @@
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">&times;</button>
-								<h4 class="modal-title" id="myModalLabel">방방술래 서비스 관리</h4>
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
 							</div>
-							<div class="modal-body">삭제가 완료되었습니다.</div>
+							<div class="modal-body">처리가 완료되었습니다.</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-primary"
 									data-dismiss="modal">닫기</button>
@@ -183,7 +182,7 @@
 
 						$("#regBtn").on("click", function() {
 
-							self.location = "/bangbang/paq/register";
+							self.location = "/bangbang/faq/memberRegister";
 
 						})
 
@@ -210,12 +209,12 @@
 
 											e.preventDefault();
 											actionForm
-													.append("<input type='hidden' name='pqidx' value='"
+													.append("<input type='hidden' name='fqidx' value='"
 															+ $(this).attr(
 																	"href")
 															+ "'>");
 											actionForm.attr("action",
-													"/bangbang/paq/adminGet");
+													"/bangbang/faq/member-get");
 											actionForm.submit();
 
 										});

@@ -231,7 +231,7 @@
 																	"href")
 															+ "'>");
 											actionForm.attr("action",
-													"/bangbang/board/memberGet");
+													"/bangbang/board/member-get");
 											actionForm.submit();
 
 										});

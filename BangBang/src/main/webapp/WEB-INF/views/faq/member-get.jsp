@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-9" style="padding-left: 200px;">
-		<h1 class="page-header">1:1 문의(회원 마이페이지)</h1>
+		<h1 class="page-header">자주묻는 질문(FAQ) (회원)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -23,8 +23,8 @@
 
 
 				<%-- 				<div class="form-group">
-					<label>공지사항 번호</label> <input class="form-control" name='pqidx'
-						value='<c:out value="${paq.pqidx}"/>' readonly='readonly'>
+					<label>공지사항 번호</label> <input class="form-control" name='fqidx'
+						value='<c:out value="${faq.fqidx}"/>' readonly='readonly'>
 
 				</div> --%>
 
@@ -34,14 +34,14 @@
 				<div class="form-group" style="display: inline;">
 
 					<h2>
-						<c:out value="${paq.title }" />
+						<c:out value="${faq.title }" />
 					</h2>
 
 
 					<div
 						style="color: rgb(0, 0, 0, 0.5); display: inline; float: right; padding-right: 10px;">
 						<i class="fa-solid fa-clock"></i>
-						<fmt:formatDate pattern="yyyy-MM-dd" value="${paq.regdate}" />
+						<fmt:formatDate pattern="yyyy-MM-dd" value="${faq.regdate}" />
 					</div>
 				</div>
 
@@ -52,34 +52,20 @@
 
 
 				<div class="form-group">
-					<c:out value="${paq.content }" escapeXml="false" />
+					<c:out value="${faq.content }" escapeXml="false" />
 
 				</div>
-				<br>
-				<br>								
-				
-				<!-- 답변 내용 -->
-				
 
-				<div class="form-group">
-					<c:out value="${paq.reply }" escapeXml="false" />
-
-				</div>
-				
-				
 
 
 				<br>
 
 
-				<br>
-
-<!-- 				<button data-oper='modify' class="btn btn-default">수정/삭제</button> -->
 				<button data-oper='list' class="btn btn-info">목록</button>
 
-				<form id='operForm' action="/bangbang/paq/modify" method="get">
-					<input type='hidden' id='pqidx' name='pqidx'
-						value='<c:out value="${paq.pqidx}"/>'> <input
+				<form id='operForm' action="/bangbang/faq/modify" method="get">
+					<input type='hidden' id='fqidx' name='fqidx'
+						value='<c:out value="${faq.fqidx}"/>'> <input
 						type='hidden' name='pageNum'
 						value='<c:out value="${cri.pageNum}"/>'> <input
 						type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'>
@@ -97,6 +83,8 @@
 </div>
 
 
+
+
 <%@include file="../includes/footer.jsp"%>
 
 <script type="text/javascript">
@@ -104,16 +92,16 @@
 
 		var operForm = $("#operForm");
 
-/* 		$("button[data-oper='modify']").on("click", function(e) {
+		$("button[data-oper='modify']").on("click", function(e) {
 
-			operForm.attr("action", "/bangbang/paq/modify").submit();
+			operForm.attr("action", "/bangbang/faq/modify").submit();
 
-		}); */
+		});
 
 		$("button[data-oper='list']").on("click", function(e) {
 
-			operForm.find("#pqidx").remove();
-			operForm.attr("action", "/bangbang/paq/memberList")
+			operForm.find("#fqidx").remove();
+			operForm.attr("action", "/bangbang/faq/member-list")
 			operForm.submit();
 
 		});

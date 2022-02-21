@@ -60,7 +60,7 @@ public class faqController {
 		
 	}
 	
-	@GetMapping("memberList")
+	@GetMapping("member-list")
 	public void memberList(Criteria cri, Model model) {
 		
 		log.info("list: " + cri);
@@ -93,7 +93,7 @@ public class faqController {
 		return "redirect:/faq/list";
 	}
 	
-	@GetMapping({"/get", "/modify", "/memberGet"})
+	@GetMapping({"/get", "/modify", "/member-get"})
 	public void get(@RequestParam("fqidx") int fqidx, @ModelAttribute("cri") Criteria cri, Model model) {
 		
 		log.info("/get or modify");

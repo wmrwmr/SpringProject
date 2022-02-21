@@ -27,7 +27,7 @@
 
 
 
-				<form role="form" action="/bangbang/paq/memberRegister" method="post">
+				<form role="form" action="/bangbang/paq/member-register" method="post">
 					<div class="form-group">
 
 					

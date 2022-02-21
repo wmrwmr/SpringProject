@@ -53,7 +53,7 @@
 
 
 
-				<form role="form" action="/bangbang/paq/replyRegister" method="post" >
+				<form role="form" action="/bangbang/paq/reply-register" method="post" >
 
 
 					<div class="form-group">
@@ -108,7 +108,7 @@
 					
 					
 					
-				<form id='operForm' action="/bangbang/paq/adminGet" method="get" style="padding-top: 15px;">
+				<form id='operForm' action="/bangbang/paq/admin-get" method="get" style="padding-top: 15px;">
 					<input type='hidden' id='pqidx' name='pqidx'
 						value='<c:out value="${paq.pqidx}"/>'> <input
 						type='hidden' name='pageNum'
@@ -224,7 +224,7 @@
 
 						$("button[data-oper='back']").on("click", function(e) {
 
-							operForm.attr("action", "/bangbang/paq/adminGet").submit();
+							operForm.attr("action", "/bangbang/paq/admin-get").submit();
 
 						});
 						

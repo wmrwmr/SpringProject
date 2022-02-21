@@ -61,7 +61,7 @@ public class notice_boardController {
 	}
 	
 	
-	@GetMapping("/memberList")
+	@GetMapping("/member-list")
 	public void memberList(Criteria cri, Model model) {
 		
 		log.info("list: " + cri);
@@ -95,7 +95,7 @@ public class notice_boardController {
 		return "redirect:/board/list";
 	}
 	
-	@GetMapping({"/get", "/modify", "/memberGet"})
+	@GetMapping({"/get", "/modify", "/member-get"})
 	public void get(@RequestParam("nidx") int nidx, @ModelAttribute("cri") Criteria cri, Model model) {
 		
 		log.info("/get or modify");

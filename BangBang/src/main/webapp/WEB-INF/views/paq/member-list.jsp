@@ -70,7 +70,7 @@
 				<div class='pull-left' style="padding-top: 18px;" >
 					<div class="col-lg-12">
 
-						<form id='searchForm' action="/bangbang/paq/memberList" method="get">
+						<form id='searchForm' action="/bangbang/paq/member-list" method="get">
 							<select name='type'>
 
 								<option value="">--</option>
@@ -118,7 +118,7 @@
 				</div>
 				<!-- end Pagination -->
 
-				<form id='actionForm' action="/bangbang/paq/memberList" method='get'>
+				<form id='actionForm' action="/bangbang/paq/member-list" method='get'>
 					<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum }'> 
 					<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 					<input type='hidden' name='start' value='${pageMaker.cri.start}'>
@@ -183,7 +183,7 @@
 
 						$("#regBtn").on("click", function() {
 
-							self.location = "/bangbang/paq/memberRegister";
+							self.location = "/bangbang/paq/member-register";
 
 						})
 
@@ -215,7 +215,7 @@
 																	"href")
 															+ "'>");
 											actionForm.attr("action",
-													"/bangbang/paq/memberGet");
+													"/bangbang/paq/member-get");
 											actionForm.submit();
 
 										});
