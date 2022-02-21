@@ -18,8 +18,8 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				&nbsp;
-				<button id="regBtn" type="button" class="btn btn-xs pull-right">새
-					글 쓰기</button>
+				<button id="regBtn" type="button" class="btn btn-xs pull-right">1:1
+					문의 등록</button>
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">

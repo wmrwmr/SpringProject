@@ -6,7 +6,7 @@
 
 <head>
 
-	 <link rel="short icon" href="/bangbang/resources/wine.png">
+	 <link rel="short icon" href="/bangbang/resources/imageContainer/wine.png">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -72,7 +72,7 @@
 	<div id="first-section-background">
 		<div class="section" id="first-section">
 			<p class="catchphrase">
-				전국 방방곳곳 내가 원하는 술이 찾아온다<br/>
+				전국 방방곳곳 원하는 술이 찾아온다<br/>
 				<span>방방술래</span>
 			</p>
 
@@ -151,7 +151,7 @@
 				</p>
 			</div>
 			<div>
-				<p id="company-name">(주) 데일리샷 대표 구성모</p>
+				<p id="company-name">(주) 방방술래 대표 구성모</p>
 				<p class="company-info">
 					서울시 비트구 캠프로 123, 5층
 					<span class="vertical-divider hide--mobile">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
