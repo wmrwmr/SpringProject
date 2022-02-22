@@ -1,45 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<%@include file="../includes/header.jsp"%>
+<%@include file="../includes/bangbang-header.jsp"%>
 
-<div class="row">
-	<div class="col-lg-12">
-		<h1 class="page-header">공지사항(회원)</h1>
-	</div>
+<%@include file="../includes/bangbang-nav.jsp"%>
+
+<%@include file="../includes/hyunwoocss.jsp"%>
+
+
+
+
+
+<main class="container">
+
+		<h1 class="page-header">공지사항</h1>
 	<!-- /.col-lg-12 -->
-</div>
 <!-- /.row -->
 
 <div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				&nbsp;
 
-			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
-				<table class="table table-striped table-bordered table-hover">
+				<table style="background-color: white;" class="table table-striped table-bordered table-hover" >
 					<thead>
-						<!-- 						<tr>
-							<th>번호</th>
-							<th style="padding-right: 180px"></th>
-							<th></th>
-							<th>수정일</th>
-						</tr> -->
+
 					</thead>
 
 					<c:forEach items="${list}" var="board">
 
 						<tr>
-							<%-- <td><c:out value="${board.nidx}" /></td> --%>
 
-							<td style="padding: 15px;"><a class='move'
+							<td style="padding: 15px; width: 990px;"><a class='move'
 								href='<c:out value="${board.nidx}"/>'
-								style="padding-right: 500px; padding-left: 20px;"> <c:out
+								style=" padding-left: 10px; color: rgb(0,0,0, 60%);"> <c:out
 										value="${board.title}" /></a></td>
 
 
@@ -72,7 +68,7 @@
 				<div class='pull-left' style="padding-top: 18px;">
 					<div class="col-lg-12">
 
-						<form id='searchForm' action="/bangbang/board/list" method="get">
+						<form id='searchForm' action="/bangbang/board/member-list" method="get">
 							<select name='type'>
 
 								<option value="">--</option>
@@ -128,7 +124,7 @@
 
 				<!-- end Pagination -->
 
-				<form id='actionForm' action="/bangbang/board/list" method='get'>
+				<form id='actionForm' action="/bangbang/board/member-list" method='get'>
 					<input type='hidden' name='pageNum'
 						value='${pageMaker.cri.pageNum }'> <input type='hidden'
 						name='amount' value='${pageMaker.cri.amount}'> <input
@@ -161,18 +157,21 @@
 
 			</div>
 			<!-- /.panel-body -->
-		</div>
 		<!-- /.panel -->
-	</div>
 	<!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
 
 
+</main>
 
+	
+<%@include file="../includes/bangbang-footer.jsp"%>
 
+    
+  </body>
+</html> 
 
-<%@include file="../includes/footer.jsp"%>
 
 <script type="text/javascript">
 	$(document)

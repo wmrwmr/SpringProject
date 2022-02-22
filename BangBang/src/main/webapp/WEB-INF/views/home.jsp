@@ -32,7 +32,7 @@
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'> 
 
 <title>방방술래</title>
-- <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 <link rel="stylesheet" href="https://d1e2y5wc27crnp.cloudfront.net/web/style_4.css">
 
 
@@ -95,7 +95,7 @@
 			</div>
 			
 			<div id="button-container">
-				<div id="app-download-link-button"><a href="/bangbang/board/list" style="text-decoration: none; color: white;">홈페이지로 이동</a>
+				<div id="app-download-link-button"><a href="/bangbang/main/mainpage" style="text-decoration: none; color: white;">홈페이지로 이동</a>
 					
 				</div>
 				<div class="hide--mobile"></div>
@@ -151,7 +151,7 @@
 				</p>
 			</div>
 			<div>
-				<p id="company-name">(주) 방방술래 대표 구성모</p>
+				<p id="company-name">(주) 방방술래</p>
 				<p class="company-info">
 					서울시 비트구 캠프로 123, 5층
 					<span class="vertical-divider hide--mobile">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
@@ -159,7 +159,7 @@
 
 				</p>
 				<p class="company-info">
-					문의 &nbsp;wnrak0116@gmail.com
+					문의 &nbsp;bangbang@bang.co
 					<span class="vertical-divider hide--mobile">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
 					<br class="show--mobile"/>
 					<span class="space show--mobile"></span>

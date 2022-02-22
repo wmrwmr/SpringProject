@@ -3,11 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<%@include file="../includes/header.jsp"%>
+<%@include file="../includes/bangbang-header.jsp"%>
+
+<%@include file="../includes/bangbang-nav.jsp"%>
+
+<%@include file="../includes/hyunwoocss.jsp"%>
+
+<main class="container">
 
 <div class="row">
-	<div class="col-lg-9" style="padding-left: 200px;">
-		<h1 class="page-header">1:1 문의(회원 마이페이지)</h1>
+	<div class="col-lg-12" >
+		<h1 class="page-header">1:1 문의</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -15,7 +21,7 @@
 
 
 <div class="row">
-	<div class="col-lg-9" style="padding-left: 200px;">
+	<div class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">&nbsp;</div>
 			<!-- /.panel-heading -->
@@ -96,8 +102,9 @@
 	</div>
 </div>
 
+</main>
 
-<%@include file="../includes/footer.jsp"%>
+<%@include file="../includes/bangbang-footer.jsp"%>
 
 <script type="text/javascript">
 	$(document).ready(function() {

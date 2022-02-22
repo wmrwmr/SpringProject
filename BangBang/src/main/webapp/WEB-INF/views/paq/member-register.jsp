@@ -3,7 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<%@include file="../includes/header.jsp"%>
+<%@include file="../includes/bangbang-header.jsp"%>
+
+<%@include file="../includes/bangbang-nav.jsp"%>
+
+<%@include file="../includes/hyunwoocss.jsp"%>
+
+<main class="container">
 
 <div class="row">
 	<div class="col-lg-12">
@@ -65,7 +71,9 @@
 </div>
 <!-- /.row -->
 
-<%@include file="../includes/footer.jsp"%>
+</main>
+
+<%@include file="../includes/bangbang-footer.jsp"%>
 
 
 

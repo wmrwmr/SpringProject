@@ -3,24 +3,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<%@include file="../includes/header.jsp"%>
+<%@include file="../includes/bangbang-header.jsp"%>
+
+<%@include file="../includes/bangbang-nav.jsp"%>
+
+<%@include file="../includes/hyunwoocss.jsp"%>
+
+<main class="container">
 
 <div class="row">
-	<div class="col-lg-12">
-		<h1 class="page-header">1:1 문의(회원 마이페이지)</h1>
-	</div>
+
+			<div class="col-lg-12">
+
+		<h1 class="page-header">1:1 문의</h1> 	
+		<button id="regBtn" type="button" class="btn btn-xs pull-right" style="background-color: rgb(0,0,0,10%); ">1:1 문의 등록</button>
+
+		</div>
+
 	<!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
 
 <div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				&nbsp;
-				<button id="regBtn" type="button" class="btn btn-xs pull-right">1:1
-					문의 등록</button>
-			</div>
+				
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 				<table class="table table-striped table-bordered table-hover">
@@ -38,8 +43,8 @@
 						<tr>
 							<%-- <td><c:out value="${paq.pqidx}" /></td> --%>
 
-							<td style="padding: 15px;"><a class='move' href='<c:out value="${paq.pqidx}"/>'
-								style="padding-right: 500px; padding-left: 20px;" > <c:out value="${paq.title}" /></a></td>
+							<td style="padding: 15px; width: 950px;"><a class='move' href='<c:out value="${paq.pqidx}"/>'
+								style=" padding-left: 10px; color: rgb(0,0,0,60%)" > <c:out value="${paq.title}" /></a></td>
 
 
 
@@ -152,14 +157,12 @@
 			<!-- /.panel-body -->
 		</div>
 		<!-- /.panel -->
-	</div>
 	<!-- /.col-lg-12 -->
-</div>
 <!-- /.row -->
 
+</main>
 
-
-<%@include file="../includes/footer.jsp"%>
+<%@include file="../includes/bangbang-footer.jsp"%>
 
 <script type="text/javascript">
 	$(document)

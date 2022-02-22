@@ -5,6 +5,8 @@
 
 <%@include file="../includes/header.jsp"%>
 
+
+
 <div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">공지사항(관리자)</h1>
@@ -38,9 +40,9 @@
 						<tr>
 							<%-- <td><c:out value="${board.nidx}" /></td> --%>
 
-							<td style="padding: 15px;"><a class='move'
+							<td style="padding: 15px; width: 1250px;"><a class='move'
 								href='<c:out value="${board.nidx}"/>'
-								style="padding-right: 500px; padding-left: 20px;"> <c:out
+								style=" padding-left: 20px;"> <c:out
 										value="${board.title}" /></a></td>
 
 

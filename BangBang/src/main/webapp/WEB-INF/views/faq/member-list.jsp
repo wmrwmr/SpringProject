@@ -3,42 +3,35 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<%@include file="../includes/header.jsp"%>
+<%@include file="../includes/bangbang-header.jsp"%>
+
+<%@include file="../includes/bangbang-nav.jsp"%>
+
+<%@include file="../includes/hyunwoocss.jsp"%>
+
+
+<main class="container">
 
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">자주묻는 질문(FAQ) (회원)</h1>
+		<h1 class="page-header">자주묻는 질문(FAQ)</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
 
 <div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				&nbsp;
-
-			</div>
-			<!-- /.panel-heading -->
 			<div class="panel-body">
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
-						<!-- 						<tr>
-							<th>번호</th>
-							<th style="padding-right: 180px"></th>
-							<th></th>
-							<th>수정일</th>
-						</tr> -->
 					</thead>
 
 					<c:forEach items="${list}" var="faq">
 
 						<tr>
-							<%-- <td><c:out value="${faq.fqidx}" /></td> --%>
 
-							<td style="padding: 15px;"><a class='move' href='<c:out value="${faq.fqidx}"/>'
-								style="padding-right: 500px; padding-left: 20px;" > <c:out value="${faq.title}" /></a></td>
+							<td style="padding: 15px; width: 990px;"><a class='move' href='<c:out value="${faq.fqidx}"/>'
+								style="padding-left: 10px; color: rgb(0,0,0,60%)" > <c:out value="${faq.title}" /></a></td>
 
 
 
@@ -69,7 +62,7 @@
 				<div class='pull-left' style="padding-top: 18px;" >
 					<div class="col-lg-12">
 
-						<form id='searchForm' action="/bangbang/faq/list" method="get">
+						<form id='searchForm' action="/bangbang/faq/member-list" method="get">
 							<select name='type'>
 
 								<option value="">--</option>
@@ -117,7 +110,7 @@
 				</div>
 				<!-- end Pagination -->
 
-				<form id='actionForm' action="/bangbang/faq/list" method='get'>
+				<form id='actionForm' action="/bangbang/faq/member-list" method='get'>
 					<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum }'> 
 					<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 					<input type='hidden' name='start' value='${pageMaker.cri.start}'>
@@ -151,14 +144,12 @@
 			<!-- /.panel-body -->
 		</div>
 		<!-- /.panel -->
-	</div>
 	<!-- /.col-lg-12 -->
-</div>
 <!-- /.row -->
 
+</main>
 
-
-<%@include file="../includes/footer.jsp"%>
+<%@include file="../includes/bangbang-footer.jsp"%>
 
 <script type="text/javascript">
 	$(document)

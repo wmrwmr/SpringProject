@@ -38,8 +38,8 @@
 						<tr>
 							<%-- <td><c:out value="${paq.pqidx}" /></td> --%>
 
-							<td style="padding: 15px;"><a class='move' href='<c:out value="${paq.pqidx}"/>'
-								style="padding-right: 500px; padding-left: 20px;" > <c:out value="${paq.title}" /></a></td>
+							<td style="padding: 15px; width: 1250px;"><a class='move' href='<c:out value="${paq.pqidx}"/>'
+								style=" padding-left: 20px;" > <c:out value="${paq.title}" /></a></td>
 
 
 
