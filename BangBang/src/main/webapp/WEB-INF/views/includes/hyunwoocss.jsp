@@ -32,7 +32,7 @@
 	href="/bangbang/resources/vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
-<script src="https://kit.fontawesome.com/ba424bfb3c.js" crossorigin="anonymous"></script>
+
 
 	
 	<script type="text/javascript" src="/bangbang/resources/ckeditor/ckeditor.js"></script>

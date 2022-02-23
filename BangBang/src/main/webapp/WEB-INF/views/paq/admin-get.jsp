@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-lg-9" style="padding-left: 200px;">
-		<h1 class="page-header">1:1 문의(관리자)</h1>
+		<h1 class="page-header">1:1 문의</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>

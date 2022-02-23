@@ -66,6 +66,9 @@
 	    font-family: 'Noto Sans KR', sans-serif; text-decoration: none; padding: 8px; color: gray; font-size:18px; 
 	  }	
 		
+
+
+	  
 		
     </style>
 	
@@ -78,7 +81,7 @@
     <!-- Custom styles for this template -->
     <link href="/bangbang/resources/getboot/blog.css" rel="stylesheet">
     
-    
+    <script src="https://kit.fontawesome.com/ba424bfb3c.js" crossorigin="anonymous"></script>
    
     
     
@@ -94,10 +97,16 @@
         <a href="/bangbang/main/mainpage" class="title-font">방방술래</a>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center" style="padding-top:50px;">
-        <a class="link-secondary" href="#" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-        </a>
-        <a class="btn btn-sm btn-outline-secondary" href="#">로그인</a>
+
+        
+        <div class= "header-search" style=" border: 1px solid rgb(0,0,0,20%); background: #ffffff; ">
+		<input class="header-serach-input" style="border: 0px;  " type="text" placeholder="찾으시는 상품">
+		<button style="border: 0px; background: rgb(0,0,0,20%); outline: none;"> <i class="fa-solid fa-magnifying-glass" style="color: rgb(0,0,0,60%);"></i></button>
+		</div>
+		
+		<div style="width:10px;"></div>
+		
+        <a class="btn btn-sm btn-outline-secondary" href="#">로그인</a> 
       </div>
     </div>
   </header>
