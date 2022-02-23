@@ -30,7 +30,7 @@
   
   
   <!-- 메인 시작 -->
-  <div class="row mb-2">
+   <div class="row mb-2">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
@@ -226,7 +226,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
   
   
   <!-- 메인 끝 -->
