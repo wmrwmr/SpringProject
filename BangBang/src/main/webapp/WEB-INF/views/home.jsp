@@ -12,20 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  
     
- <meta name="title" content="데일리샷 | 우리동네 술 할인앱">
-<meta name="description" content="우리동네 술 할인앱 데일리샷. 위스키, 와인, 사케 등 쉽게 구하기 힘든 술들을 집 근처에서 픽업해보세요!">
-<meta name="keywords" content="칵테일, 수제맥주, 와인, 무료, 매일, 주류, 술, 알콜, 드링크, 멤버십, 쉐이커, 데일리샷, 후치, 월정액, 서브스크립션">
-<meta property="og:title" content="데일리샷 | 우리동네 술 할인앱">
-<meta property="og:description" content="맛있는 술을 쉽게 즐길 수 있도록, 데일리샷">
-<meta property="og:image" content="http://dailyshot.co/static/background_VER=2.png">
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="400" />
-<meta property="og:image:height" content="300" />
+
 
 
     
 <script
-	src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
 	integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
 	crossorigin="anonymous">
 </script>
@@ -36,22 +28,7 @@
 <link rel="stylesheet" href="https://d1e2y5wc27crnp.cloudfront.net/web/style_4.css">
 
 
-     <link rel="apple-touch-icon" sizes="57x57" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/android-icon-36x36.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/android-icon-48x48.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/android-icon-72x72.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/android-icon-96x96.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/android-icon-144x144.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/android-icon-192x192.png">
-    <link rel="manifest" href="https://d1e2y5wc27crnp.cloudfront.net/icon.ico/manifest.json">
+
 
 
         
@@ -185,17 +162,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js"></script>
 
-<script type="application/ld+json">
-	{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "Dailyshot",
-		"url": "https://dailyshot.co",
-		"sameAs": [
-			"https://www.instagram.com/dailyshot.co/",
-		]
-	}
-</script>
+
 
 
 <script type="text/javascript" src="https://d1e2y5wc27crnp.cloudfront.net/web/app_4.js"></script>
